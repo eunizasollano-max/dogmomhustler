@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UBC — Ultimate Branding Course with Master Resell Rights</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #FFFAF8;
+      --bg-alt:     #FFF1ED;
+      --bg-card:    #FFFFFF;
+      --pink:       #A85060;
+      --pink-soft:  #C4889A;
+      --pink-pale:  #EFD8DE;
+      --pink-light: #F9F0F2;
+      --border:     #DFC8CE;
+      --text:       #2D1A1A;
+      --muted:      #8A6860;
+      --radius:     12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* PAW CURSOR */
+    :root {
+      --paw-hollow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath transform='translate(16,21) rotate(0) scale(1.4)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(7,14) rotate(-15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(12,11) rotate(-5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(20,11) rotate(5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(25,14) rotate(15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='3.2' stroke-linejoin='round'/%3E%3C/svg%3E") 16 16;
+      --paw-filled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath transform='translate(16,21) rotate(0) scale(1.4)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3Cpath transform='translate(7,14) rotate(-15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3Cpath transform='translate(12,11) rotate(-5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3Cpath transform='translate(20,11) rotate(5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3Cpath transform='translate(25,14) rotate(15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3C/svg%3E") 16 16;
+    }
+    *, *::before, *::after { cursor: var(--paw-hollow), auto; }
+    a, button, label, summary, [onclick], [role="button"] { cursor: var(--paw-hollow), pointer; }
+    *:active { cursor: var(--paw-filled), auto !important; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,250,248,0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+    }
+    .nav-back {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-back:hover { color: var(--pink); }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.02em;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @media (max-width: 640px) {
+      nav { padding: 14px 20px; }
+      .nav-logo { display: none; }
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      border-radius: 100px;
+      padding: 14px 36px;
+      border: none;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease, background 0.15s;
+    }
+    .btn:hover { transform: translateY(-4px) scale(1.03); }
+    .btn:active { transform: translateY(2px) scale(0.97); transition-duration: 0.07s; }
+
+    .btn-pink {
+      background: var(--pink);
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(168,80,96,0.35), 0 2px 0 rgba(0,0,0,0.08);
+    }
+    @keyframes pulse-btn {
+      0%, 100% { box-shadow: 0 4px 18px rgba(168,80,96,0.35), 0 2px 0 rgba(0,0,0,0.08); }
+      50%       { box-shadow: 0 4px 28px rgba(168,80,96,0.6), 0 2px 0 rgba(0,0,0,0.08); }
+    }
+    .btn-pink { animation: pulse-btn 2.4s ease-in-out infinite; }
+    .btn-pink:hover { animation: none; background: #8E3A4A; box-shadow: 0 6px 28px rgba(168,80,96,0.5); }
+
+    /* LAYOUT */
+    .section    { padding: 96px 48px; }
+    .section-sm { padding: 72px 48px; }
+    @media (max-width: 768px) {
+      .section    { padding: 64px 24px; }
+      .section-sm { padding: 48px 24px; }
+    }
+    .wrap    { max-width: 1040px; margin: 0 auto; }
+    .wrap-sm { max-width: 700px;  margin: 0 auto; }
+    .tc      { text-align: center; }
+
+    /* TYPE */
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.1;
+      color: var(--pink);
+      margin-bottom: 8px;
+      white-space: nowrap;
+    }
+    @media (max-width: 640px) { h1 { white-space: normal; } }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.22;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    p { color: var(--muted); line-height: 1.9; margin-bottom: 16px; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--text); }
+
+    .eyebrow {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 14px;
+    }
+
+    /* HERO */
+    .hero-bg {
+      background: linear-gradient(160deg, #fff8f2 0%, #ffeee8 40%, #f0f8ff 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 80px 48px 72px;
+      text-align: center;
+    }
+    @media (max-width: 640px) { .hero-inner { padding: 56px 24px 56px; } }
+    .hero-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 32px;
+      letter-spacing: 0.02em;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 580px;
+      margin: 0 auto 20px;
+    }
+    .hero-highlight {
+      font-size: 0.95rem;
+      color: var(--pink);
+      font-weight: 700;
+      line-height: 1.8;
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+
+    /* DIVIDER */
+    hr.divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 0;
+    }
+
+    /* WHY UBC FEATURES */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .feature-span { grid-column: 1 / -1; }
+    @media (max-width: 640px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .feature-span { grid-column: 1; }
+    }
+    .feature-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .feature-item:hover {
+      border-color: var(--pink-soft);
+      box-shadow: 0 4px 20px rgba(168,80,96,0.1);
+    }
+    .feature-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      background: var(--pink-pale);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* TESTIMONIALS */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 40px auto 0;
+    }
+    @media (max-width: 768px) {
+      .testi-grid { grid-template-columns: 1fr; }
+    }
+    .testi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+    .testi-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--pink-soft);
+      line-height: 1;
+      margin-bottom: -8px;
+    }
+    .testi-text {
+      font-size: 0.97rem;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .testi-heart { color: var(--pink); font-size: 1.1rem; }
+
+    /* COURSE LAYOUT */
+    .module-list { margin-top: 32px; }
+    details.module {
+      border-bottom: 1px solid var(--border);
+    }
+    details.module:first-child { border-top: 1px solid var(--border); }
+    summary.module-summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 4px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      user-select: none;
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+    summary.module-summary::-webkit-details-marker { display: none; }
+    summary.module-summary:hover { color: var(--pink); }
+    .module-arrow {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--pink-pale);
+      color: var(--pink);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    details.module[open] .module-arrow { transform: rotate(180deg); }
+    details.module[open] summary.module-summary { color: var(--pink); }
+    .module-body {
+      padding: 4px 4px 16px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .new-badge {
+      font-size: 0.62rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: var(--pink-pale);
+      color: var(--pink);
+      padding: 2px 8px;
+      border-radius: 100px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    /* FAQ */
+    .faq-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 32px;
+    }
+    details.faq {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-card);
+    }
+    details.faq:last-child { border-bottom: none; }
+    summary.faq-summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text);
+      list-style: none;
+      user-select: none;
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+    summary.faq-summary::-webkit-details-marker { display: none; }
+    summary.faq-summary:hover { color: var(--pink); }
+    .faq-plus { font-size: 1.4rem; color: var(--pink); line-height: 1; transition: transform 0.2s; flex-shrink: 0; margin-left: 16px; }
+    details.faq[open] .faq-plus { transform: rotate(45deg); }
+    details.faq[open] summary.faq-summary { color: var(--pink); }
+    .faq-body { padding: 0 24px 20px; font-size: 0.9rem; color: var(--muted); line-height: 1.85; }
+
+    /* FREEBIE OPT-IN */
+    .freebie-section {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 48px;
+      text-align: center;
+    }
+    @media (max-width: 640px) { .freebie-section { padding: 60px 24px; } }
+    .freebie-box {
+      background: var(--bg-alt);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    @media (max-width: 480px) { .freebie-box { padding: 36px 24px; } }
+    .freebie-icon {
+      font-size: 2.6rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .freebie-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .freebie-input {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1.5px solid var(--border);
+      border-radius: 100px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.92rem;
+      color: var(--text);
+      background: var(--bg-card);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .freebie-input:focus { border-color: var(--pink-soft); }
+    .freebie-input::placeholder { color: var(--muted); }
+    .freebie-btn {
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 14px 36px;
+      border: none;
+    }
+    .freebie-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+    .freebie-success {
+      display: none;
+      margin-top: 24px;
+    }
+    .freebie-success-inner {
+      background: #F0F9F0;
+      border: 1.5px solid #B8DFB8;
+      border-radius: 14px;
+      padding: 24px 28px;
+      color: #2D5A2D;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+    .freebie-success-inner strong { font-size: 1.05rem; }
+
+    /* FINAL CTA */
+    .cta-section {
+      background: linear-gradient(160deg, var(--pink-pale) 0%, var(--bg-alt) 100%);
+      border-top: 1px solid var(--border);
+      padding: 88px 48px;
+      text-align: center;
+    }
+    @media (max-width: 640px) { .cta-section { padding: 64px 24px; } }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 44px 24px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 2.2;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--text);
+      font-size: 1rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--pink); }
+
+    /* SCROLL ANIMATIONS */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.d1 { transition-delay: 0.1s; }
+    .fade-up.d2 { transition-delay: 0.2s; }
+    .fade-up.d3 { transition-delay: 0.3s; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-back">← Back to Paws &amp; Breathe</a>
+    <span class="nav-logo">Dogmom Hustler</span>
+    <div style="display:flex; align-items:center; gap:20px;">
+      <a href="catalog.html" class="nav-back">🛍️ More Products</a>
+      <a href="checkoutubc.html" class="btn btn-pink" style="font-size:0.76rem; padding:10px 22px;">Join Now 🐾</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero-bg">
+    <div class="hero-inner">
+      <div class="fade-up" style="margin-bottom:24px;">
+        <img src="images/ubc-logo.png" alt="UBC Logo" style="width:110px; height:auto; border-radius:18px; box-shadow:0 4px 20px rgba(168,80,96,0.25); display:block; margin:0 auto;" />
+      </div>
+      <span class="eyebrow fade-up" style="font-size:0.8rem; letter-spacing:0.22em;">The Most Comprehensive Branding Course</span>
+      <div class="fade-up d1" style="display:flex; align-items:baseline; justify-content:center; flex-wrap:wrap; gap:16px; margin-bottom:32px;">
+        <h1 style="margin-bottom:0;">Ultimate Branding Course</h1>
+        <p class="hero-subtitle" style="margin-bottom:0;">with Master Resell Rights</p>
+      </div>
+      <a href="checkoutubc.html" class="btn btn-pink fade-up d2" style="margin-bottom:40px;">Join Now 🐾</a>
+      <p class="hero-desc fade-up d3">
+        A group of marketers with <strong>three decades</strong> of experience combined came together to create the <strong>most comprehensive course</strong> on social media &amp; branding <strong>you've ever seen!</strong>
+      </p>
+      <p class="hero-desc fade-up">
+        Everything you need to know to build an infectious brand online! Your social media brand is one of the most important assets you have because it appreciates the value of everything else that you do!
+      </p>
+      <p class="hero-highlight fade-up">
+        <strong>Master Resell Rights</strong> means that when you buy this course, you also buy the right to re-sell it for <strong>100% profit!</strong>
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- WHY UBC -->
+  <div class="section" style="background:var(--bg-alt);">
+    <div class="wrap">
+      <div class="tc fade-up" style="margin-bottom:8px;">
+        <span class="eyebrow">What Sets Us Apart</span>
+        <h2>Why UBC?</h2>
+        <p style="max-width:620px; margin:0 auto; font-size:1rem;">
+          Elevate your brand with UBC's comprehensive curriculum, guided by industry experts and practical insights. Engage in hands-on learning through interactive exercises and case studies, fostering real-world application. Advance your career in branding with flexible learning options tailored to your schedule. Choose UBC for a credible credential and actionable strategies that make a lasting impact on your brand's success.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-item fade-up">
+          <div class="feature-icon">🎬</div>
+          <div>
+            <h3>270+ Videos, 22+ Hours</h3>
+            <p>Over 270 comprehensive videos totaling over 22 hours on social media, marketing, branding &amp; the sales process.</p>
+          </div>
+        </div>
+        <div class="feature-item fade-up d1">
+          <div class="feature-icon">📐</div>
+          <div>
+            <h3>Funnel Templates</h3>
+            <p>Save hours by downloading our customizable done-for-you sales funnel which is included with your purchase of the course.</p>
+          </div>
+        </div>
+        <div class="feature-item fade-up">
+          <div class="feature-icon">🤝</div>
+          <div>
+            <h3>Community Calls</h3>
+            <p>Get instant access to a success community where you can network, collaborate, and join free weekly calls on mindset &amp; business.</p>
+          </div>
+        </div>
+        <div class="feature-item fade-up d1">
+          <div class="feature-icon">♾️</div>
+          <div>
+            <h3>Lifetime Updates</h3>
+            <p>Get lifetime access to the course, any updates, new videos added &amp; the support community.</p>
+          </div>
+        </div>
+        <div class="feature-item fade-up feature-span">
+          <div class="feature-icon">🌍</div>
+          <div>
+            <h3>4 Languages</h3>
+            <p>Now available in English, Spanish, French &amp; German!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tc" style="margin-top:48px;">
+        <a href="checkoutubc.html" class="btn btn-pink fade-up">Join Now 🐾</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- TESTIMONIALS -->
+  <div class="section" style="background:var(--bg);">
+    <div class="wrap tc">
+      <span class="eyebrow fade-up">Check Out What People Are Saying</span>
+      <h2 class="fade-up">Testimonials</h2>
+
+      <div class="testi-grid">
+        <div class="testi-card fade-up">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">The videos are AMAZING like everything is so clear and well-explained.</p>
+          <p class="testi-text">You explain everything so well ok. How you do it and it doesn't feel overwhelming at ALL. <span class="testi-heart">♥</span></p>
+          <p style="font-size:0.78rem; font-weight:700; color:var(--pink); margin:0;">— UBC Student</p>
+        </div>
+
+        <div class="testi-card fade-up">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I've taken so many online courses and UBC is honestly the most complete one I've ever bought. The branding modules alone were worth it — I finally understand how to make my content look and feel consistent. And the MRR is just the cherry on top! <span class="testi-heart">♥</span></p>
+          <p style="font-size:0.78rem; font-weight:700; color:var(--pink); margin:0;">— Happy UBC Student</p>
+        </div>
+
+        <div class="testi-card fade-up">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I was scared to start because I didn't know anything about marketing. But UBC broke everything down step by step. The Instagram and TikTok modules changed how I show up online completely. I made back my investment within my first week of reselling!</p>
+          <p class="testi-text">If you're on the fence — just go for it. <span class="testi-heart">♥</span></p>
+          <p style="font-size:0.78rem; font-weight:700; color:var(--pink); margin:0;">— Grateful UBC Student</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- COURSE LAYOUT -->
+  <div class="section" style="background:var(--bg-alt);">
+    <div class="wrap-sm">
+      <div class="tc fade-up" style="margin-bottom:8px;">
+        <span class="eyebrow">What You'll Learn</span>
+        <h2>Course Layout</h2>
+      </div>
+      <div class="module-list fade-up">
+        <details class="module">
+          <summary class="module-summary">Module 1: Building Your Sales Funnel <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Learn how to build a high-converting sales funnel from scratch to start generating income online.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 2: High Quality Branding <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Discover what makes a brand stand out and how to create a cohesive, professional identity.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 3: How To Launch <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Step-by-step guidance on launching your digital product or course successfully.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 4: All About Instagram <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Master Instagram strategy — content planning, growth tactics, stories, and engagement.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 5: All About TikTok <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Leverage TikTok's algorithm to grow your audience and drive traffic to your offers.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 6: Content Creation <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Create compelling, scroll-stopping content across all platforms with confidence.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 7: E-mail Marketing <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Build and nurture an email list that converts subscribers into loyal buyers.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 8: Attraction Marketing <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Learn how to draw your ideal customers to you naturally instead of chasing them.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 9: Being Efficient <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Systems and workflows to run your business smarter, not harder.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 10: How To Stay Organized <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Tools, habits, and templates to keep your business running smoothly every day.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 11: Video Editing with CapCut <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Create professional short-form videos with CapCut — from beginner to confident editor.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 12: Video Editing with VLLO <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Master VLLO for polished mobile video editing on the go.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 13: Creating Value Videos <div class="module-arrow">∨</div></summary>
+          <div class="module-body">How to produce educational, helpful content that builds trust and drives sales.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 14: Business Mindset <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Develop the mindset of a successful entrepreneur — resilience, focus, and abundance thinking.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 15: DMOs <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Your Daily Method of Operations — the exact daily actions that lead to consistent growth.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 16: All About Reels <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Create Reels that go viral and consistently attract your ideal audience.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 17: MRR Mastery <span class="new-badge">new</span> <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Everything you need to know about Master Resell Rights — how to price, market, and sell.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 18: Faceless Marketing <span class="new-badge">new</span> <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Build a profitable brand and sell online without ever showing your face.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 19: Beauty Business Branding <span class="new-badge">new</span> <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Tailored branding strategies for beauty entrepreneurs and service-based businesses.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 20: Affiliate Program <div class="module-arrow">∨</div></summary>
+          <div class="module-body">How to set up and grow an affiliate program to scale your income with help from others.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 21: Digital Product Creation <span class="new-badge">new</span> <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Create your own digital products from scratch — guides, templates, courses, and more.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 22: ManyChat <span class="new-badge">new</span> <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Automate your DMs and grow your sales using ManyChat's powerful messaging flows.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 23: AI &amp; ChatGPT <span class="new-badge">new</span> <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Learn how to use AI and ChatGPT to speed up your content creation, write better captions, automate tasks, and grow your business smarter.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 24: YouTube &amp; TikTok <span class="new-badge">new</span> <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Master both platforms — from channel setup and content strategy to growth hacks and monetization on YouTube and TikTok.</div>
+        </details>
+        <details class="module">
+          <summary class="module-summary">Module 25: Taxes for Digital Entrepreneurs <span class="new-badge">new</span> <div class="module-arrow">∨</div></summary>
+          <div class="module-body">Understand the basics of taxes as an online business owner — what to track, how to file, and how to stay compliant while keeping more of your profit.</div>
+        </details>
+        <details class="module" style="border-bottom:none;">
+          <summary class="module-summary" style="color:var(--pink);">BONUS: 100+ Page Content Vault <div class="module-arrow" style="background:var(--pink); color:#fff;">∨</div></summary>
+          <div class="module-body">An extensive vault of ready-to-use content — captions, scripts, hooks, and more — to fuel your content creation for months.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Q&A -->
+  <div class="section" style="background:var(--bg);">
+    <div class="wrap-sm">
+      <div class="tc fade-up" style="margin-bottom:8px;">
+        <span class="eyebrow">Got Questions?</span>
+        <h2>Question &amp; Answer</h2>
+      </div>
+      <div class="faq-wrap fade-up">
+        <details class="faq">
+          <summary class="faq-summary">What is MRR? <span class="faq-plus">+</span></summary>
+          <div class="faq-body">MRR stands for <strong>Master Resell Rights</strong>. When you purchase UBC, you also receive the rights to resell the course and keep 100% of the profits. You don't need to create anything from scratch — just buy once and resell as many times as you want.</div>
+        </details>
+        <details class="faq">
+          <summary class="faq-summary">Who is this course for? <span class="faq-plus">+</span></summary>
+          <div class="faq-body">UBC is for anyone who wants to build a powerful brand online — beginners, entrepreneurs, coaches, creatives, and digital marketers. Whether you're starting from zero or looking to level up your existing brand, this course has something for you.</div>
+        </details>
+        <details class="faq">
+          <summary class="faq-summary">What support do I have? <span class="faq-plus">+</span></summary>
+          <div class="faq-body">You'll get access to a success community, weekly community calls on mindset &amp; business, and lifetime access to any updates or new videos added to the course. You're never alone on this journey.</div>
+        </details>
+        <details class="faq">
+          <summary class="faq-summary">Do I have to resell the course? <span class="faq-plus">+</span></summary>
+          <div class="faq-body">Absolutely not! Reselling is completely optional. You can use UBC purely for your own learning and brand-building. The MRR is simply an added bonus if you choose to use it.</div>
+        </details>
+        <details class="faq">
+          <summary class="faq-summary">Is this the same as other MRR courses? <span class="faq-plus">+</span></summary>
+          <div class="faq-body">No. UBC was built by marketers with three decades of combined experience and covers over 22 hours of content across 22+ modules. It goes far deeper than most MRR courses on the market — covering branding, content creation, video editing, automation, and more.</div>
+        </details>
+        <details class="faq" style="border-bottom:none;">
+          <summary class="faq-summary">Is this Network Marketing? <span class="faq-plus">+</span></summary>
+          <div class="faq-body">No. UBC is a one-time digital product purchase — not an MLM or network marketing program. You buy the course, you learn from it, and if you choose, you resell it and keep 100% of the money. There are no tiers, no recruitment requirements, and no monthly fees.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- FREEBIE OPT-IN -->
+  <!--
+    Netlify detects this form at deploy time via the "netlify" attribute.
+    Submissions are saved under Forms → "potential-clients" in your Netlify dashboard.
+    You can view/export them anytime at app.netlify.com → your site → Forms.
+  -->
+  <div class="freebie-section">
+    <div class="freebie-box fade-up">
+      <span class="freebie-icon">🎁</span>
+      <span class="eyebrow" style="font-size:0.78rem; letter-spacing:0.2em;">Not Ready to Commit?</span>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.1rem); margin:8px 0 10px;">Grab Our Free Sneak Peek</h2>
+      <p style="font-size:0.9rem; color:var(--muted); max-width:380px; margin:0 auto;">
+        Drop your name and email below to get instant access — no purchase needed.
+      </p>
+
+      <form
+        id="freebie-form"
+        class="freebie-form"
+        name="potential-clients"
+        netlify
+        novalidate
+      >
+        <input type="hidden" name="form-name" value="potential-clients" />
+        <input
+          class="freebie-input"
+          type="text"
+          id="freebie-name"
+          name="name"
+          placeholder="Your first name"
+          required
+        />
+        <input
+          class="freebie-input"
+          type="email"
+          id="freebie-email"
+          name="email"
+          placeholder="Your email address"
+          required
+        />
+        <button type="submit" id="freebie-btn" class="btn btn-pink freebie-btn">
+          Get Instant Access ✨
+        </button>
+      </form>
+
+      <div id="freebie-success" class="freebie-success">
+        <div class="freebie-success-inner">
+          <strong>🐾 You're in! Here's your free sneak peek:</strong><br /><br />
+          <a
+            href="https://drive.google.com/file/d/1uxDZrse4wzW-OEXqWn135VYrZGrlHb84/view?usp=drivesdk"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-pink"
+            style="font-size:0.88rem; padding:14px 32px; display:inline-block; margin-bottom:16px;"
+          >
+            Download Your Freebie 🎁
+          </a>
+          <br />
+          <span style="font-size:0.82rem; color:var(--muted);">
+            Enjoy the sneak peek — and when you're ready, we'd love to have you inside UBC. 💕
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="cta-section">
+    <div class="wrap-sm">
+      <span class="eyebrow fade-up" style="font-size:0.9rem;">Ready to Build Your Brand?</span>
+      <h2 class="fade-up" style="font-size:clamp(2rem,4vw,3rem); margin-bottom:16px;">Your brand journey starts here.</h2>
+      <p class="fade-up" style="font-size:1rem; max-width:480px; margin:0 auto 36px;">Join thousands of students who are building infectious brands and earning 100% profit with Master Resell Rights.</p>
+      <a href="checkoutubc.html" class="btn btn-pink fade-up" style="font-size:1rem; padding:18px 52px;">
+        I'm Ready 🐾
+      </a>
+    </div>
+  </div>
+
+  <!-- PAWS & BREATHE OPTION -->
+  <div style="background:var(--bg-alt); border-top:1px solid var(--border); padding:64px 48px; text-align:center;">
+    <div class="wrap-sm">
+      <span class="eyebrow">Also Available from Dogmom Hustler</span>
+      <h2 style="font-size:clamp(1.4rem,2.8vw,2rem); margin-bottom:14px;">
+        Looking for a done-for-you digital product with <em style="color:var(--pink);">PLR?</em>
+      </h2>
+      <p style="max-width:540px; margin:0 auto 28px;">
+        The <strong>Paws &amp; Breathe: Dogmom's Guide to Slow Living</strong> is a ready-to-sell digital product bundle — a vault of 2,000+ courses, 2,500+ Canva templates, and 8TB of content that you can use, edit, and resell as your own with <strong>Private Label Rights (PLR)</strong>.
+      </p>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-bottom:32px;">
+        <span style="background:var(--bg-card); border:1px solid var(--border); border-radius:100px; padding:6px 16px; font-size:0.74rem; font-weight:700; color:var(--muted);">📦 2,000+ Courses &amp; Ebooks</span>
+        <span style="background:var(--bg-card); border:1px solid var(--border); border-radius:100px; padding:6px 16px; font-size:0.74rem; font-weight:700; color:var(--muted);">🎨 2,500+ Canva Templates</span>
+        <span style="background:var(--bg-card); border:1px solid var(--border); border-radius:100px; padding:6px 16px; font-size:0.74rem; font-weight:700; color:var(--muted);">🗄️ 8TB Digital Vault</span>
+        <span style="background:var(--bg-card); border:1px solid var(--border); border-radius:100px; padding:6px 16px; font-size:0.74rem; font-weight:700; color:var(--muted);">📋 PLR — Resell as Your Own</span>
+        <span style="background:var(--bg-card); border:1px solid var(--border); border-radius:100px; padding:6px 16px; font-size:0.74rem; font-weight:700; color:var(--muted);">🐾 Perfect for Dog Moms</span>
+      </div>
+      <a href="index.html" class="btn btn-pink" style="font-size:0.88rem; padding:14px 40px;">
+        Explore Paws &amp; Breathe →
+      </a>
+    </div>
+  </div>
+
+  <!-- DIGITAL PRODUCTS SHOP -->
+  <style>
+    .dp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .dp-grid { grid-template-columns: 1fr; } }
+    .dp-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 24px; text-align: left; display: flex; flex-direction: column; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+    .dp-card:hover { border-color: var(--pink-soft); box-shadow: 0 4px 20px rgba(168,80,96,0.12); transform: translateY(-3px); }
+  </style>
+  <div style="background:var(--bg); border-top:1px solid var(--border); padding:96px 48px;">
+    <div class="wrap">
+      <div style="text-align:center; margin-bottom:52px;">
+        <span class="eyebrow">More from Dogmom Hustler</span>
+        <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,3vw,2.2rem); font-weight:700; color:var(--text); margin-top:10px; line-height:1.25;">More Digital Products</h2>
+        <p style="color:var(--muted); max-width:540px; margin:14px auto 0; font-size:0.94rem; line-height:1.8;">Standalone guides and courses to level up your digital business — at your own pace.</p>
+      </div>
+      <div class="dp-grid">
+
+        <div class="dp-card fade-up">
+          <span style="font-size:2rem; display:block; margin-bottom:14px;">🎙️</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:8px; line-height:1.3;">Pathway to Digital Products</h3>
+          <p style="font-size:0.84rem; color:var(--muted); line-height:1.75; flex:1; margin-bottom:16px;">Your ultimate ebook + audio course to master marketing and turn leads into real sales.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+            <span style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--pink);">$15 USD</span>
+            <a href="checkout-pathway.html" class="btn btn-pink" style="font-size:0.8rem; padding:10px 22px;">Get It Now →</a>
+          </div>
+        </div>
+
+        <div class="dp-card fade-up">
+          <span style="font-size:2rem; display:block; margin-bottom:14px;">📱</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:8px; line-height:1.3;">Instagram Growth Guide</h3>
+          <p style="font-size:0.84rem; color:var(--muted); line-height:1.75; flex:1; margin-bottom:16px;">A 100-page audio course to optimize your Instagram, grow your audience, and start making sales.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+            <span style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--pink);">$12 USD</span>
+            <a href="checkout-instagram.html" class="btn btn-pink" style="font-size:0.8rem; padding:10px 22px;">Get It Now →</a>
+          </div>
+        </div>
+
+        <div class="dp-card fade-up">
+          <span style="font-size:2rem; display:block; margin-bottom:14px;">🎬</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:8px; line-height:1.3;">Faceless Marketing Guide + 600 Reels Vault</h3>
+          <p style="font-size:0.84rem; color:var(--muted); line-height:1.75; flex:1; margin-bottom:16px;">Learn to sell on social media without ever showing your face, plus 600 ready-to-use faceless reels.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+            <span style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--pink);">$10 USD</span>
+            <a href="checkout-faceless.html" class="btn btn-pink" style="font-size:0.8rem; padding:10px 22px;">Get It Now →</a>
+          </div>
+        </div>
+
+        <div class="dp-card fade-up">
+          <span style="font-size:2rem; display:block; margin-bottom:14px;">🧵</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:8px; line-height:1.3;">Threads Unleashed + Becoming a Super Seller</h3>
+          <p style="font-size:0.84rem; color:var(--muted); line-height:1.75; flex:1; margin-bottom:16px;">Master Threads and learn proven strategies to convert your audience into paying customers.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+            <span style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--pink);">$17 USD</span>
+            <a href="checkout-threads.html" class="btn btn-pink" style="font-size:0.8rem; padding:10px 22px;">Get It Now →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FREE RESOURCES -->
+  <div style="background:var(--pink-pale); border-top:1px solid var(--border); padding:80px 48px;">
+    <div class="wrap">
+      <div style="text-align:center; margin-bottom:44px;">
+        <span class="eyebrow">On the House 🎁</span>
+        <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,3vw,2.2rem); font-weight:700; color:var(--text); margin-top:10px; line-height:1.25;">Free Resources for You</h2>
+        <p style="color:var(--muted); max-width:480px; margin:12px auto 0; font-size:0.94rem; line-height:1.8;">No payment needed — just click and download. A little gift from Dogmom Hustler.</p>
+      </div>
+      <div class="dp-grid">
+
+        <div class="dp-card fade-up" style="border-color:var(--pink-soft);">
+          <span style="font-size:2rem; display:block; margin-bottom:14px;">📖</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:8px; line-height:1.3;">Ultimate Guide for Beginners</h3>
+          <p style="font-size:0.84rem; color:var(--muted); line-height:1.75; flex:1; margin-bottom:20px;">Everything a beginner needs to know to get started — grab your free guide and hit the ground running.</p>
+          <a href="https://drive.google.com/file/d/1nmZEXYhy_QXubxLUSKQnIseT4Ihox1GB/view?usp=drivesdk" target="_blank" class="btn btn-pink" style="font-size:0.84rem; padding:12px 24px; text-align:center; display:block;">📥 Download Free Guide</a>
+        </div>
+
+        <div class="dp-card fade-up" style="border-color:var(--pink-soft);">
+          <span style="font-size:2rem; display:block; margin-bottom:14px;">👀</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:8px; line-height:1.3;">SNEAKPEEK UBC</h3>
+          <p style="font-size:0.84rem; color:var(--muted); line-height:1.75; flex:1; margin-bottom:20px;">Get a free preview of the Ultimate Branding Course and see what's inside before you commit.</p>
+          <a href="https://drive.google.com/file/d/1uxDZrse4wzW-OEXqWn135VYrZGrlHb84/view?usp=drivesdk" target="_blank" class="btn btn-pink" style="font-size:0.84rem; padding:12px 24px; text-align:center; display:block;">📥 Get the Sneak Peek</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Dogmom Hustler</span>
+    <div style="margin-bottom:10px;">
+      <a href="mailto:dogmomhustler@gmail.com">dogmomhustler@gmail.com</a>
+    </div>
+    <p>© 2026 Dogmom Hustler. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+  <script>
+    (function () {
+      const form    = document.getElementById('freebie-form');
+      const btn     = document.getElementById('freebie-btn');
+      const success = document.getElementById('freebie-success');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name  = document.getElementById('freebie-name').value.trim();
+        const email = document.getElementById('freebie-email').value.trim();
+        if (!name || !email) return;
+
+        btn.disabled    = true;
+        btn.textContent = 'Just a sec…';
+
+        // Submit to Netlify Forms (stores name + email in your dashboard)
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({
+            'form-name': 'potential-clients',
+            'name':  name,
+            'email': email,
+          }).toString(),
+        })
+        .finally(function () {
+          // Always show the download link — even if Netlify isn't live yet (local preview)
+          form.style.display    = 'none';
+          success.style.display = 'block';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

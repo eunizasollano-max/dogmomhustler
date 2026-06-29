@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paws &amp; Breathe — Digital Blueprint for Dog Moms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #FFFAF8;
+      --bg-alt:     #FFF1ED;
+      --bg-card:    #FFFFFF;
+      --pink:       #C8707A;
+      --pink-soft:  #E8A8AE;
+      --pink-pale:  #FAE8EA;
+      --pink-light: #FFF0F1;
+      --border:     #EDD5D7;
+      --text:       #2D1A1A;
+      --muted:      #8A6860;
+      --radius:     12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ── PAW CURSOR ── */
+    :root {
+      --paw-hollow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath transform='translate(16,21) rotate(0) scale(1.4)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(7,14) rotate(-15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(12,11) rotate(-5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(20,11) rotate(5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(25,14) rotate(15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3C/svg%3E") 16 16;
+      --paw-filled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath transform='translate(16,21) rotate(0) scale(1.4)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(7,14) rotate(-15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(12,11) rotate(-5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(20,11) rotate(5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(25,14) rotate(15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3C/svg%3E") 16 16;
+    }
+    *, *::before, *::after { cursor: var(--paw-hollow), auto; }
+    a, button, label, summary, [onclick], [role="button"] { cursor: var(--paw-hollow), pointer; }
+    *:active { cursor: var(--paw-filled), auto !important; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* ── AURORA ── */
+    @keyframes aurora {
+      from { background-position: 50% 50%, 50% 50%; }
+      to   { background-position: 350% 50%, 350% 50%; }
+    }
+    .aurora-bg {
+      position: fixed;
+      inset: -10px;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(100deg,
+          #fff 0%, #fff 7%,
+          transparent 10%, transparent 12%,
+          #fff 16%),
+        repeating-linear-gradient(100deg,
+          #C8707A 10%, #a78bfa 15%,
+          #E8A8AE 20%, #c4b5fd 25%,
+          #f9a8d4 30%);
+      background-size: 300%, 200%;
+      background-position: 50% 50%, 50% 50%;
+      filter: blur(10px) invert(1);
+      opacity: 0.5;
+      animation: aurora 60s linear infinite;
+      will-change: background-position;
+      mask-image: radial-gradient(ellipse at 80% 0%, black 10%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at 80% 0%, black 10%, transparent 70%);
+    }
+    .aurora-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(100deg,
+          #fff 0%, #fff 7%,
+          transparent 10%, transparent 12%,
+          #fff 16%),
+        repeating-linear-gradient(100deg,
+          #C8707A 10%, #a78bfa 15%,
+          #E8A8AE 20%, #c4b5fd 25%,
+          #f9a8d4 30%);
+      background-size: 200%, 100%;
+      background-attachment: fixed;
+      mix-blend-mode: difference;
+      animation: aurora 60s linear infinite;
+    }
+
+    /* ── BANNER ── */
+    .banner {
+      background: var(--pink);
+      color: #fff;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,250,248,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 56px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-links .btn-pink { color: #fff; }
+    .nav-links .btn-pink:hover { color: #fff; }
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-text-links { display: none !important; }
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.84rem;
+      letter-spacing: 0.06em;
+      border-radius: 100px;
+      padding: 14px 36px;
+      border: none;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease, background 0.15s;
+      cursor: var(--paw-hollow), pointer;
+    }
+    .btn:hover { transform: translateY(-3px) scale(1.02); }
+    .btn:active { transform: translateY(1px) scale(0.98); transition-duration: 0.07s; }
+
+    .btn-pink {
+      background: var(--pink);
+      color: #fff;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.10), 0 0 0 0 rgba(200,112,122,0.4);
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 2px 0 rgba(0,0,0,0.10), 0 0 0 0 rgba(200,112,122,0.5); }
+      50%       { box-shadow: 0 2px 0 rgba(0,0,0,0.10), 0 0 0 10px rgba(200,112,122,0); }
+    }
+    .btn-pink { animation: pulse-glow 2.4s ease-in-out infinite; }
+    .btn-pink:hover { animation: none; background: #d4788a; box-shadow: 0 8px 24px rgba(200,112,122,0.4); }
+
+    .btn-ghost {
+      background: transparent;
+      border: 2px solid var(--pink);
+      color: var(--pink);
+    }
+    .btn-ghost:hover { background: var(--pink); color: #fff; }
+
+    .btn-light {
+      background: #fff;
+      color: var(--pink);
+      border: 2px solid #fff;
+    }
+    .btn-light:hover { background: var(--pink-pale); border-color: var(--pink-pale); }
+
+    /* ── LAYOUT ── */
+    .section    { padding: 96px 56px; }
+    .section-sm { padding: 72px 56px; }
+    @media (max-width: 768px) {
+      .section    { padding: 64px 24px; }
+      .section-sm { padding: 52px 24px; }
+    }
+    .wrap    { max-width: 1060px; margin: 0 auto; }
+    .wrap-sm { max-width: 720px;  margin: 0 auto; }
+    .tc      { text-align: center; }
+
+    /* ── EYEBROW ── */
+    .eyebrow {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 16px;
+    }
+
+    /* ── TYPE ── */
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text);
+      margin-bottom: 28px;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    p { color: var(--muted); line-height: 1.9; margin-bottom: 18px; }
+    p:last-child { margin-bottom: 0; }
+    .lead { font-size: 1.05rem; color: var(--text); opacity: 0.85; line-height: 1.85; }
+    strong { color: var(--text); }
+    .pink-text { color: var(--pink); }
+
+    /* ── GRIDS ── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    @media (max-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    /* ── HERO ── */
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .hero-split { grid-template-columns: 1fr; gap: 40px; }
+      .hero-photo { order: -1; }
+    }
+    .hero-photo img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      object-fit: contain;
+      border: 2px solid var(--border);
+      box-shadow: 0 8px 40px rgba(200,112,122,0.12);
+    }
+
+    /* ── SITUATION ITEMS ── */
+    .sit-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 24px 26px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .sit-item:hover {
+      border-color: var(--pink-soft);
+      box-shadow: 0 4px 16px rgba(200,112,122,0.1);
+    }
+    .sit-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--pink); flex-shrink: 0; margin-top: 9px; }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      color: var(--text);
+      line-height: 1.5;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .pull-quote em { color: var(--pink); }
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 7rem;
+      color: var(--pink-pale);
+      line-height: 0;
+      display: block;
+      text-align: center;
+      margin-bottom: 24px;
+      user-select: none;
+    }
+
+    /* ── STORY SPLIT ── */
+    .story-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .story-split { grid-template-columns: 1fr; gap: 40px; } }
+    .story-split img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+      display: block;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(200,112,122,0.08);
+    }
+
+    /* ── STAT BLOCK ── */
+    .stat-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .stat-eyebrow { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); font-weight: 700; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--pink);
+      line-height: 1;
+    }
+    .stat-lbl { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+
+    /* ── PRODUCT BOX ── */
+    .product-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .product-box-header {
+      background: var(--pink);
+      padding: 24px 28px;
+      text-align: center;
+    }
+    .product-box-header .box-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .product-box-header .box-sub { color: rgba(255,255,255,0.8); font-size: 0.8rem; font-weight: 600; margin: 0; }
+    .product-box-body {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 640px) { .product-box-body { grid-template-columns: 1fr; } }
+    .product-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--pink-soft);
+      border-radius: 8px;
+      font-size: 0.84rem;
+      color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .product-item:hover {
+      border-left-color: var(--pink);
+      box-shadow: 0 2px 8px rgba(200,112,122,0.12);
+    }
+    .product-item strong { color: var(--pink); font-weight: 700; }
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--pink-pale);
+      border: 1.5px solid var(--pink-soft);
+      color: var(--pink);
+      font-size: 0.7rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── BONUS CARDS ── */
+    .bonus-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .bonus-card:hover {
+      border-color: var(--pink-soft);
+      box-shadow: 0 4px 20px rgba(200,112,122,0.12);
+      transform: translateY(-3px);
+    }
+    .bonus-icon { font-size: 1.8rem; display: block; margin-bottom: 16px; }
+
+    /* ── WIN IMAGES ── */
+    .win-img-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 36px; }
+    .win-img-grid img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      display: block;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .win-img-grid img:hover {
+      box-shadow: 0 4px 20px rgba(200,112,122,0.18);
+      transform: translateY(-3px);
+    }
+    @media (max-width: 640px) { .win-img-grid { grid-template-columns: 1fr; } }
+
+    /* ── TESTIMONIALS ── */
+    .testi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+    }
+    .testi-card::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--pink-soft);
+      line-height: 1;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ── PRICING ── */
+    .price-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 52px 44px;
+      text-align: center;
+      max-width: 460px;
+      margin: 0 auto;
+      box-shadow: 0 8px 40px rgba(200,112,122,0.1);
+    }
+    .badge-pill {
+      display: inline-block;
+      background: var(--pink-pale);
+      color: var(--pink);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 7px 20px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+    }
+    .price-num { font-family: 'Playfair Display', serif; font-size: 3.4rem; font-weight: 700; color: var(--pink); line-height: 1; margin-bottom: 8px; }
+    .price-strike { font-size: 0.88rem; color: var(--muted); text-decoration: line-through; margin-bottom: 10px; }
+    .price-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 28px; }
+
+    /* ── TRUST BADGES ── */
+    .trust-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 20px; }
+    .trust-badge { display: flex; align-items: center; gap: 5px; font-size: 0.72rem; color: var(--muted); font-weight: 600; }
+
+    /* ── FAQ ── */
+    .faq-wrap { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    details { border-bottom: 1px solid var(--border); background: var(--bg-card); }
+    details:last-child { border-bottom: none; }
+    summary {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 26px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text);
+      list-style: none;
+      user-select: none;
+      transition: color 0.15s;
+    }
+    summary:hover { color: var(--pink); }
+    summary::-webkit-details-marker { display: none; }
+    .faq-plus { font-size: 1.4rem; color: var(--pink); line-height: 1; transition: transform 0.2s; flex-shrink: 0; margin-left: 14px; }
+    details[open] .faq-plus { transform: rotate(45deg); }
+    details[open] summary { color: var(--pink); }
+    .faq-body { padding: 0 26px 20px; font-size: 0.9rem; color: var(--muted); line-height: 1.85; }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      background: var(--pink);
+      padding: 96px 56px;
+      text-align: center;
+    }
+    .cta-section h2 { color: #fff; margin-bottom: 16px; }
+    .cta-section p { color: rgba(255,255,255,0.85); font-size: 1.02rem; margin-bottom: 0; }
+    .cta-eyebrow { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.65); font-weight: 700; display: block; margin-bottom: 14px; }
+    @media (max-width: 640px) { .cta-section { padding: 72px 24px; } }
+
+    /* ── FREEBIE OPT-IN ── */
+    .freebie-section {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 48px;
+      text-align: center;
+    }
+    @media (max-width: 640px) { .freebie-section { padding: 60px 24px; } }
+    .freebie-box {
+      background: var(--bg-alt);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    @media (max-width: 480px) { .freebie-box { padding: 36px 24px; } }
+    .freebie-icon { font-size: 2.6rem; margin-bottom: 12px; display: block; }
+    .freebie-form { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
+    .freebie-input {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1.5px solid var(--border);
+      border-radius: 100px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.92rem;
+      color: var(--text);
+      background: var(--bg-card);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .freebie-input:focus { border-color: var(--pink-soft); }
+    .freebie-input::placeholder { color: var(--muted); }
+    .freebie-btn { cursor: pointer; font-size: 0.9rem; padding: 14px 36px; border: none; }
+    .freebie-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+    .freebie-success { display: none; margin-top: 24px; }
+    .freebie-success-inner {
+      background: var(--bg-alt);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      line-height: 1.7;
+    }
+    .freebie-success-inner strong { font-size: 1.05rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 52px 24px;
+      font-size: 0.8rem;
+      line-height: 2.2;
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-weight: 700; color: #fff; font-size: 1.1rem; display: block; margin-bottom: 10px; }
+    footer a { color: rgba(255,255,255,0.75); text-decoration: none; margin: 0 12px; }
+    footer a:hover { color: var(--pink-soft); }
+
+    /* ── MOBILE BUY BAR ── */
+    .mobile-buy-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      padding: 14px 20px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 -4px 20px rgba(200,112,122,0.12);
+    }
+    .mobile-buy-bar .price-tag { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--text); line-height: 1; }
+    .mobile-buy-bar .price-tag small { display: block; font-family: 'Nunito', sans-serif; font-size: 0.68rem; color: var(--muted); font-weight: 500; text-decoration: line-through; margin-bottom: 2px; }
+    @media (max-width: 768px) { .mobile-buy-bar { display: flex; } body { padding-bottom: 80px; } }
+
+    /* ── SCROLL TO TOP ── */
+    #scroll-top {
+      position: fixed;
+      bottom: 28px;
+      left: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: #fff;
+      border: none;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(200,112,122,0.35);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 0.25s, transform 0.25s;
+      z-index: 99;
+      font-weight: 700;
+    }
+    #scroll-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    #scroll-top:hover { background: #d4788a; transform: translateY(-2px); }
+    @media (max-width: 768px) { #scroll-top { bottom: 96px; } }
+
+    /* ── BTN ROW ── */
+    .btn-row { display: flex; flex-wrap: wrap; gap: 14px; }
+    .btn-row.centered { justify-content: center; margin-top: 36px; }
+
+    /* ── SEE MORE ── */
+    .see-more-btn {
+      background: none;
+      border: none;
+      color: var(--pink);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0;
+      text-align: left;
+      letter-spacing: 0.04em;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .see-more-btn:hover { color: var(--text); }
+
+    /* ── INSIDE GRID ── */
+    @media (max-width: 768px) { .inside-grid { grid-template-columns: 1fr !important; } }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+    .fade-up.delay-3 { transition-delay: 0.3s; }
+
+    /* ── UBC TEASER ── */
+    @media (max-width: 768px) {
+      .ubc-teaser-wrap { grid-template-columns: 1fr !important; }
+      .ubc-teaser-sidebar { display: none !important; }
+      .ubc-teaser-wrap { padding: 40px 24px !important; }
+    }
+
+    /* ── DIVIDER ── */
+    .pink-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--pink-soft), transparent);
+      border: none;
+      margin: 0;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AURORA BACKGROUND -->
+  <div class="aurora-bg" aria-hidden="true"></div>
+
+  <!-- COUNTDOWN BANNER -->
+  <div class="banner">
+    ⏳ Special discounted pricing ends tonight at midnight &nbsp;—&nbsp; <span id="countdown" style="font-weight:800;">loading…</span>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Paws &amp; Breathe</a>
+    <div class="nav-links">
+      <div class="nav-text-links" style="display:flex; gap:28px;">
+        <a href="#my-story">My Story</a>
+        <a href="#what-you-get">What's Inside</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#offer">Pricing</a>
+        <a href="catalog.html">🛍️ More Products</a>
+      </div>
+      <a href="checkout.html" class="btn btn-pink" style="font-size:0.78rem; padding:11px 24px;">Get Access ↗</a>
+    </div>
+  </nav>
+
+  <!-- MOBILE STICKY BUY BAR -->
+  <div class="mobile-buy-bar">
+    <div class="price-tag">
+      <small>Was ₱41,200</small>
+      ₱2,499
+    </div>
+    <a href="checkout.html" class="btn btn-pink" style="padding:13px 28px; font-size:0.82rem; flex:1; text-align:center;">
+      Begin Your Journey — ₱2,499
+    </a>
+  </div>
+
+  <!-- SCROLL TO TOP -->
+  <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+  <!-- HERO -->
+  <div class="section" style="background:var(--bg); border-bottom:1px solid var(--border);">
+    <div class="wrap">
+      <div class="hero-split">
+        <div class="hero-photo">
+          <img src="images/hero.png" alt="Kuma and Yuni" />
+        </div>
+        <div>
+          <span class="eyebrow" style="font-size:0.72rem; letter-spacing:0.26em;">To Slow Mornings and Peace of Mind</span>
+          <h1>
+            With the <em style="color:var(--pink); font-style:italic;">Paws &amp; Breathe:</em><br/>
+            Dogmom's Guide to Slow Living,<br/>
+            <span style="font-size:clamp(0.95rem,1.6vw,1.15rem); font-family:'Playfair Display',serif; font-style:italic; color:var(--muted);">Earn from the Comfort of Home &amp; Cuddles of your Furbaby.</span>
+          </h1>
+          <p class="lead" style="margin-bottom:32px;">
+            This is your complete roadmap to success in digital marketing. Tailor made for everyone, this guide equips you with everything you need to start earning, all while preserving your health and time. Work hard but take time to <strong>Paws &amp; Breathe!</strong>
+          </p>
+          <div class="btn-row">
+            <a href="checkout.html" class="btn btn-pink">I Want This!</a>
+            <a href="#what-you-get" class="btn btn-ghost">See What's Inside</a>
+          </div>
+          <p style="margin-top:24px; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);">
+            One-time payment &nbsp;·&nbsp; Lifetime access &nbsp;·&nbsp; Instant delivery
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UBC TEASER -->
+  <div class="ubc-teaser-wrap" style="background:var(--bg-card); border-bottom:1px solid var(--border); border-top:1px solid var(--border); padding:48px 56px;">
+    <div class="wrap">
+      <div style="display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center;">
+        <div>
+          <span class="eyebrow" style="margin-bottom:10px;">Also Available — Ultimate Branding Course</span>
+          <h2 style="font-size:clamp(1.3rem,2.5vw,1.8rem); margin-bottom:12px;">
+            Want a more thorough course to start your own <em style="color:var(--pink);">business &amp; branding?</em>
+          </h2>
+          <p style="margin-bottom:20px; max-width:600px;">
+            Built by marketers with <strong>three decades of combined experience</strong> — the UBC is the most comprehensive course on social media, branding &amp; the sales process. Buy once and resell for <strong>100% profit</strong> with Master Resell Rights.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px;">
+            <span style="display:inline-flex; align-items:center; gap:6px; background:var(--pink-pale); border:1px solid var(--border); border-radius:100px; padding:6px 14px; font-size:0.75rem; font-weight:700; color:var(--text);">🎬 270+ Videos &amp; 22+ Hours</span>
+            <span style="display:inline-flex; align-items:center; gap:6px; background:var(--pink-pale); border:1px solid var(--border); border-radius:100px; padding:6px 14px; font-size:0.75rem; font-weight:700; color:var(--text);">📚 22 Modules + Bonus Vault</span>
+            <span style="display:inline-flex; align-items:center; gap:6px; background:var(--pink-pale); border:1px solid var(--border); border-radius:100px; padding:6px 14px; font-size:0.75rem; font-weight:700; color:var(--text);">💸 MRR — Resell for 100% Profit</span>
+            <span style="display:inline-flex; align-items:center; gap:6px; background:var(--pink-pale); border:1px solid var(--border); border-radius:100px; padding:6px 14px; font-size:0.75rem; font-weight:700; color:var(--text);">👤 Faceless Marketing Included</span>
+            <span style="display:inline-flex; align-items:center; gap:6px; background:var(--pink-pale); border:1px solid var(--border); border-radius:100px; padding:6px 14px; font-size:0.75rem; font-weight:700; color:var(--text);">♾️ Lifetime Access &amp; Updates</span>
+            <span style="display:inline-flex; align-items:center; gap:6px; background:var(--pink-pale); border:1px solid var(--border); border-radius:100px; padding:6px 14px; font-size:0.75rem; font-weight:700; color:var(--text);">🌍 Available in 4 Languages</span>
+          </div>
+          <a href="ubcmain.html" class="btn btn-ghost" style="font-size:0.84rem; padding:12px 32px;">
+            Learn More About UBC →
+          </a>
+        </div>
+        <div class="ubc-teaser-sidebar" style="text-align:center; min-width:160px;">
+          <div style="background:var(--pink-pale); border:2px solid var(--border); border-radius:16px; padding:28px 24px;">
+            <p style="font-size:0.68rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--pink); margin-bottom:8px;">Modules include</p>
+            <p style="font-size:0.78rem; color:var(--muted); line-height:2; margin:0;">Instagram &amp; TikTok<br/>Email Marketing<br/>Content Creation<br/>Sales Funnels<br/>Video Editing<br/>Business Mindset<br/>Digital Products<br/><strong style="color:var(--pink);">+ more</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARE YOU IN A SIMILAR SITUATION -->
+  <div class="section" style="background:var(--bg-alt);">
+    <div class="wrap">
+      <div class="tc fade-up" style="margin-bottom:64px;">
+        <span class="eyebrow">Can You Relate?</span>
+        <h2>Are You in a Similar Situation?</h2>
+      </div>
+      <div class="grid-2">
+        <div class="sit-item fade-up"><div class="sit-dot"></div><div><h3>Constantly Overwhelmed at Work</h3><p>Stuck in endless meetings, dealing with demanding tasks and life feeling stuck in a rut — with no opportunity for personal or professional growth.</p></div></div>
+        <div class="sit-item fade-up"><div class="sit-dot"></div><div><h3>Never Enough Time</h3><p>Feel like there's never enough time in the day to pursue your passions, hobbies, or personal goals.</p></div></div>
+        <div class="sit-item fade-up"><div class="sit-dot"></div><div><h3>Financial Stress</h3><p>Constantly worried about expenses and bills — feelings of stress, fatigue, or other health issues creeping in because of money pressure.</p></div></div>
+        <div class="sit-item fade-up"><div class="sit-dot"></div><div><h3>Struggling to Balance It All</h3><p>Challenging to balance your professional responsibilities with spending quality time with your family and loved ones.</p></div></div>
+        <div class="sit-item fade-up"><div class="sit-dot"></div><div><h3>Struggling to Make Ends Meet</h3><p>Worried about your financial future or struggling to make ends meet, despite working hard in your current job.</p></div></div>
+        <div class="sit-item fade-up"><div class="sit-dot"></div><div><h3>Feeling Lonely or Isolated</h3><p>Missing meaningful connections with others due to the demands of work and life leaving you drained.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="section-sm" style="background:var(--bg);">
+    <div class="wrap-sm tc">
+      <span class="quote-mark">"</span>
+      <p class="pull-quote fade-up">
+        If these resonate with you, just know.<br/>
+        I've walked that path too.<br/>
+        <em>You're not alone.</em>
+      </p>
+    </div>
+  </div>
+
+  <hr class="pink-divider" />
+
+  <!-- MY STORY -->
+  <div id="my-story" class="section" style="background:var(--bg-alt);">
+    <div class="wrap">
+      <div class="story-split fade-up">
+        <div>
+          <img src="images/story.png" alt="Yuni and Kuma" />
+        </div>
+        <div>
+          <span class="eyebrow">My Story</span>
+          <h2 style="font-size:clamp(1.5rem,2.5vw,2rem); line-height:1.3; margin-bottom:20px;">I was constantly dealing with <em style="color:var(--pink); font-style:italic;">mental health challenges</em> and relying on my family for financial assistance</h2>
+          <p>I was a diligent worker who found herself lost, working in a Japanese Company, enjoying learning and working simultaneously. My dedication to every task and my commitment led to unforeseen consequences.</p>
+          <p>Symptoms of fatigue emerged and I couldn't understand what was happening, so I dismissed it as normal work stress. Forced to resign from my beloved job, it wasn't until later that I received a clear diagnosis: <strong>PTSD with secondary complications.</strong></p>
+          <p>The weeks I spent in the hospital became a familiar second home. I fought with feelings of inadequacy and burdens, though deep down, I knew they never felt that way.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FROM ADVERSITY TO TRIUMPH -->
+  <div class="section" style="background:var(--bg);">
+    <div class="wrap fade-up">
+      <div class="story-split">
+        <div>
+          <span class="eyebrow">From Adversity to Triumph</span>
+          <h2 style="font-size:clamp(1.5rem,2.5vw,2rem); line-height:1.3; margin-bottom:20px;">My Digital Marketing Side Hustle <em style="color:var(--pink); font-style:italic;">Changed Everything</em></h2>
+          <p>April 25, 2024 became my day of courage. After five years of joblessness, I found the strength to begin anew. Despite the loud whispers of anxiety, I dared to take the first step. Now, one month later, I'm earning from the comfort of my home.</p>
+          <p>I'm finally chasing my dreams to help others, spoiling my husband and my furbaby Kuma — who is also my ESA — along the way.</p>
+          <p>Sharing my journey, I hope to warm your heart and inspire you to share your own story too and start anew. I'm here to walk beside you on your journey to success. Let's embrace it together with open arms.</p>
+          <div class="btn-row" style="margin-top:28px;">
+            <a href="checkout.html" class="btn btn-pink">Start Your Journey</a>
+          </div>
+        </div>
+        <div>
+          <img src="images/triumph.png" alt="Yuni, her husband, and Kuma" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="pink-divider" />
+
+  <!-- INTRODUCING -->
+  <div id="what-you-get" class="section" style="background:var(--bg-alt);">
+    <div class="wrap">
+      <div class="tc" style="margin-bottom:64px;">
+        <span class="eyebrow">Why Choose Paws &amp; Breathe?</span>
+        <h2>Introducing the <em style="color:var(--pink);">Paws &amp; Breathe</em><br/>Dogmom's Guide to Slow Living</h2>
+        <p style="max-width:620px; margin:16px auto 0; font-size:0.97rem;">
+          Designed to help introverts start a digital product business even without showing their face on social media — with Private Label Rights (PLR), you can edit it, modify it, and resell it as your own.
+        </p>
+      </div>
+      <div class="inside-grid" style="display:grid; grid-template-columns:2fr 1fr; gap:24px; margin-bottom:24px;">
+        <div class="product-box">
+          <div class="product-box-header">
+            <span class="box-title">Paws &amp; Breathe</span>
+            <p class="box-sub">Dogmom's Guide to Slow Living — What's Included:</p>
+          </div>
+          <div class="product-box-body">
+            <div class="product-item"><span class="check">✓</span><span>Done-for-You <strong>Digital Product Blueprint</strong></span></div>
+            <div class="product-item"><span class="check">✓</span><span><strong>Faceless</strong> Instagram Marketing Guide</span></div>
+            <div class="product-item"><span class="check">✓</span><span><strong>2,000+</strong> courses, trainings &amp; ebooks</span></div>
+            <div class="product-item"><span class="check">✓</span><span><strong>8 Terabytes</strong> of video &amp; audio content</span></div>
+            <div class="product-item"><span class="check">✓</span><span><strong>2,500+</strong> editable Canva templates</span></div>
+            <div class="product-item"><span class="check">✓</span><span><strong>600+</strong> faceless reel content pieces</span></div>
+            <div class="product-item"><span class="check">✓</span><span>Website templates <strong>(Canva &amp; Systeme.io)</strong></span></div>
+            <div class="product-item"><span class="check">✓</span><span><strong>PLR</strong> — resell as your own</span></div>
+          </div>
+        </div>
+        <div class="stat-block">
+          <p class="stat-eyebrow">By the Numbers</p>
+          <div><p class="stat-num">2,000+</p><p class="stat-lbl">Courses, trainings &amp; ebooks</p></div>
+          <div><p class="stat-num">8 TB</p><p class="stat-lbl">Video &amp; audio content</p></div>
+          <div><p class="stat-num">2,500+</p><p class="stat-lbl">Editable Canva templates</p></div>
+          <div><p class="stat-num">600+</p><p class="stat-lbl">Faceless reel content pieces</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BONUSES -->
+  <div class="section" style="background:var(--bg); border-top:1px solid var(--border);">
+    <div class="wrap">
+      <div class="tc" style="margin-bottom:56px;">
+        <span class="eyebrow">You'll Also Get</span>
+        <h2>Bonuses Included — For Free</h2>
+      </div>
+      <div class="grid-3">
+        <div class="bonus-card fade-up"><span class="bonus-icon">🤍</span><h3>Lifetime Support &amp; Guidance</h3><p>Personal guidance and support whenever you need it — no extra charge, ever.</p></div>
+        <div class="bonus-card fade-up"><span class="bonus-icon">🐾</span><h3>Private KUMYUNIty Access</h3><p>Lifetime access to our private community for accountability, connection, and growth.</p></div>
+        <div class="bonus-card fade-up"><span class="bonus-icon">✨</span><h3>Lifetime Free Updates</h3><p>All future content additions are included forever — at absolutely no extra cost.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="pink-divider" />
+
+  <!-- PERSONAL WINS -->
+  <div class="section" style="background:var(--bg-alt);">
+    <div class="wrap">
+      <div class="tc" style="margin-bottom:56px;">
+        <span class="eyebrow">Personal Wins</span>
+        <h2>What This Journey Has Given Me</h2>
+        <p style="max-width:520px; margin:0 auto;">Real income screenshots from the journey — proof that slow living and earning can go hand in hand.</p>
+      </div>
+      <div class="win-img-grid fade-up">
+        <img src="images/win-1.png" alt="Personal win — ₱14,193 in sales" />
+        <img src="images/win-2.png" alt="Personal win — ₱6,597 in sales" />
+        <img src="images/win-3.png" alt="Personal win — ₱101,754 in sales" />
+      </div>
+    </div>
+  </div>
+
+  <hr class="pink-divider" />
+
+  <!-- TESTIMONIALS -->
+  <div id="testimonials" class="section" style="background:var(--bg);">
+    <div class="wrap">
+      <div class="tc" style="margin-bottom:56px;">
+        <span class="eyebrow">⭐⭐⭐⭐⭐ Student Reviews</span>
+        <h2>Testimonials from My Students</h2>
+      </div>
+      <div class="grid-3 fade-up">
+
+        <div class="testi-card">
+          <div class="testi-body">
+            <p class="testi-preview" style="font-size:0.9rem; color:var(--muted);">Hi Yuni! Can I just say na napaka swerti ko to be mentored by YOU? NAKU APAKABAIT!</p>
+            <div class="testi-full" hidden>
+              <p style="font-size:0.9rem; color:var(--muted); margin-bottom:10px;">Hi Yuni! Can I just say na napaka swerti ko to be mentored by YOU? NAKU APAKABAIT! I hope you get to reread this pag feeling down ka, para mas mamotivate ka lalo in helping others make passive income online. :)</p>
+              <p style="font-size:0.86rem; color:var(--muted); line-height:1.9;">✅ <strong>PALAGI MO KAMI KINAKAMUSTA.</strong> Always asking us if saan kami nahihirapan in making sales.<br/><br/>✅ <strong>APPROACHABLE.</strong> Sobrang friendly mo kahit nga di mo students you're willing to help.<br/><br/>✅ <strong>INCLUSIVE &amp; OPEN-MINDED.</strong> You made sure everyone feels welcomed, respected and valued. Please stay humble, Yuni. 😘</p>
+            </div>
+          </div>
+          <button class="see-more-btn" onclick="toggleTesti(this)">See more</button>
+          <p style="font-size:0.72rem; font-weight:700; color:var(--pink); margin-top:auto;">— Happy Student</p>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-body">
+            <p class="testi-preview" style="font-size:0.9rem; color:var(--muted);">Waaah ako deeen Yuni I wanna say thank you supeerr hulog ka ng langit ✨</p>
+            <div class="testi-full" hidden>
+              <p style="font-size:0.9rem; color:var(--muted);">Waaah ako deeen Yuni I wanna say thank you supeerr hulog ka ng langit ✨ haha pero super supportive and helpful mo talaga hehe muntik ko na di ituloy pero pag nagmemessage ka nagkakaenergy akong tapusin naiisip ko magkaka 50K din ako like you and more more pa for us shempre 🤗🤗 for sure malayo mararating mong bata ka prettyyy pa — bagay maging digital product influencer!</p>
+            </div>
+          </div>
+          <button class="see-more-btn" onclick="toggleTesti(this)">See more</button>
+          <p style="font-size:0.72rem; font-weight:700; color:var(--pink); margin-top:auto;">— Grateful Student</p>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-body">
+            <p class="testi-preview" style="font-size:0.9rem; color:var(--muted);">Thank you for your support, coach Yuni. 😊 You have been generous with all your resources and learnings.</p>
+            <div class="testi-full" hidden>
+              <p style="font-size:0.9rem; color:var(--muted);">Thank you for your support, coach Yuni. 😊 You have been generous with all your resources and learnings. Appreciate you for continuously guiding me even after sales and answering all my questions with such detail. You go above and beyond and make sure to help me reach what you have achieved already. 😊</p>
+            </div>
+          </div>
+          <button class="see-more-btn" onclick="toggleTesti(this)">See more</button>
+          <p style="font-size:0.72rem; font-weight:700; color:var(--pink); margin-top:auto;">— Satisfied Student</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <hr class="pink-divider" />
+
+  <!-- PRICING -->
+  <div id="offer" class="section" style="background:var(--bg-alt);">
+    <div class="wrap">
+      <div class="tc" style="margin-bottom:56px;">
+        <span class="eyebrow">Special Offer</span>
+        <h2>A Total Value of ₱41,200 —<br/><em style="color:var(--pink);">Yours for Just ₱2,499</em></h2>
+      </div>
+      <div class="price-card fade-up">
+        <span class="badge-pill">⏳ Discounted — Limited Time</span>
+        <p class="price-num">₱2,499</p>
+        <p class="price-strike">Originally valued at ₱41,200</p>
+        <p class="price-sub">One-time payment &nbsp;·&nbsp; Lifetime access &nbsp;·&nbsp; Instant digital delivery</p>
+        <a href="checkout.html" class="btn btn-pink" style="display:block; width:100%; margin-bottom:12px; font-size:0.9rem; padding:17px;">
+          Yes, Please! I Want This!
+        </a>
+        <a href="checkout.html" class="btn btn-ghost" style="display:block; width:100%; font-size:0.9rem; padding:17px;">
+          Get It Before This Promotion Ends
+        </a>
+        <div class="trust-badges">
+          <span class="trust-badge">🔒 Secure payment</span>
+          <span class="trust-badge">⚡ Instant access</span>
+          <span class="trust-badge">♾️ Lifetime access</span>
+          <span class="trust-badge">📋 PLR included</span>
+        </div>
+        <p style="font-size:0.75rem; color:var(--muted); margin-top:18px; line-height:1.8;">
+          Instant digital access upon payment. All products include Private Label Rights (PLR).<br/>
+          No refunds due to immediate digital delivery.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="pink-divider" />
+
+  <!-- FAQ -->
+  <div class="section" style="background:var(--bg);">
+    <div class="wrap-sm">
+      <div class="tc" style="margin-bottom:56px;">
+        <span class="eyebrow">FAQ</span>
+        <h2>Common Questions</h2>
+      </div>
+      <div class="faq-wrap">
+        <details><summary>Do I need to resell this? <span class="faq-plus">+</span></summary><p class="faq-body">No. Reselling is completely optional. You receive Private Label Rights (PLR), meaning you can use the products for yourself or resell them — your choice.</p></details>
+        <details><summary>Will I earn affiliate commissions? <span class="faq-plus">+</span></summary><p class="faq-body">No affiliate commissions are offered. This is a direct purchase of a digital product bundle — not a referral program.</p></details>
+        <details><summary>What is your refund policy? <span class="faq-plus">+</span></summary><p class="faq-body">Due to the immediate delivery of digital products, refunds are not offered. Please review everything included carefully before purchasing.</p></details>
+        <details><summary>How do I get support after purchase? <span class="faq-plus">+</span></summary><p class="faq-body">You receive lifetime support via the private KUMYUNIty community.</p></details>
+        <details><summary>Is this beginner-friendly? <span class="faq-plus">+</span></summary><p class="faq-body">Absolutely. Everything inside is designed for people starting from zero — no tech background, no marketing experience needed. It's fully self-paced so you learn on your own time, at your own speed.</p></details>
+      </div>
+    </div>
+  </div>
+
+  <!-- FREEBIE OPT-IN -->
+  <div class="freebie-section">
+    <div class="freebie-box">
+      <span class="freebie-icon">🎁</span>
+      <span class="eyebrow" style="font-size:0.78rem; letter-spacing:0.2em;">Not Ready to Commit?</span>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.1rem); margin:8px 0 10px;">Grab Our Free Beginner's Guide</h2>
+      <p style="font-size:0.9rem; color:var(--muted); max-width:380px; margin:0 auto;">
+        Drop your name and email and get instant access to the <strong>Ultimate Guide for Beginners</strong> — no purchase needed.
+      </p>
+
+      <form
+        id="freebie-form"
+        class="freebie-form"
+        name="potential-clients"
+        netlify
+        novalidate
+      >
+        <input type="hidden" name="form-name" value="potential-clients" />
+        <input class="freebie-input" type="text"  id="freebie-name"  name="name"  placeholder="Your first name"    required />
+        <input class="freebie-input" type="email" id="freebie-email" name="email" placeholder="Your email address" required />
+        <button type="submit" id="freebie-btn" class="btn btn-pink freebie-btn">
+          Get Instant Access ✨
+        </button>
+      </form>
+
+      <div id="freebie-success" class="freebie-success">
+        <div class="freebie-success-inner">
+          <strong>🐾 You're in! Here's your free guide:</strong><br /><br />
+          <a
+            href="https://drive.google.com/file/d/1nmZEXYhy_QXubxLUSKQnIseT4Ihox1GB/view?usp=drivesdk"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-pink"
+            style="font-size:0.88rem; padding:14px 32px; display:inline-block; margin-bottom:16px;"
+          >
+            Download the Ultimate Guide 🎁
+          </a>
+          <br />
+          <span style="font-size:0.82rem; color:var(--muted);">
+            Enjoy the guide — and when you're ready, we'd love to have you inside Paws &amp; Breathe. 💕
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="cta-section">
+    <div class="wrap-sm">
+      <span class="cta-eyebrow">To Slow Mornings &amp; Peace of Mind</span>
+      <h2>Your next chapter starts<br/>with one decision.</h2>
+      <p style="margin-top:16px; margin-bottom:40px;">
+        Join the community of dog moms building income and freedom — without burnout, without a boss, without giving up your life.
+      </p>
+      <div class="btn-row centered">
+        <a href="checkout.html" class="btn btn-light" style="font-size:0.92rem; padding:16px 44px;">
+          Begin Your Journey — ₱2,499
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- UBC BOTTOM OPTION -->
+  <div style="background:var(--bg-alt); border-top:1px solid var(--border); padding:64px 56px; text-align:center;">
+    <div class="wrap-sm">
+      <span class="eyebrow">Looking for More?</span>
+      <h2 style="font-size:clamp(1.4rem,2.8vw,2rem); margin-bottom:14px;">
+        Want a more thorough course to start your own <em style="color:var(--pink);">business &amp; branding?</em>
+      </h2>
+      <p style="max-width:560px; margin:0 auto 28px;">
+        The <strong>Ultimate Branding Course (UBC)</strong> is a deep-dive into social media, branding &amp; the sales process — 270+ videos, 22+ hours, 22 modules, and <strong>Master Resell Rights</strong> so you can resell it for 100% profit.
+      </p>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-bottom:32px;">
+        <span style="background:var(--bg-card); border:1px solid var(--border); border-radius:100px; padding:6px 16px; font-size:0.74rem; font-weight:700; color:var(--muted);">🎬 270+ Videos</span>
+        <span style="background:var(--bg-card); border:1px solid var(--border); border-radius:100px; padding:6px 16px; font-size:0.74rem; font-weight:700; color:var(--muted);">📚 22 Modules</span>
+        <span style="background:var(--bg-card); border:1px solid var(--border); border-radius:100px; padding:6px 16px; font-size:0.74rem; font-weight:700; color:var(--muted);">💸 100% Profit with MRR</span>
+        <span style="background:var(--bg-card); border:1px solid var(--border); border-radius:100px; padding:6px 16px; font-size:0.74rem; font-weight:700; color:var(--muted);">👤 Faceless Marketing</span>
+        <span style="background:var(--bg-card); border:1px solid var(--border); border-radius:100px; padding:6px 16px; font-size:0.74rem; font-weight:700; color:var(--muted);">♾️ Lifetime Access</span>
+      </div>
+      <a href="ubcmain.html" class="btn btn-pink" style="font-size:0.88rem; padding:14px 40px;">
+        Explore the Full Business Course →
+      </a>
+    </div>
+  </div>
+
+  <!-- DIGITAL PRODUCTS SHOP -->
+  <div style="background:var(--bg); border-top:1px solid var(--border); padding:96px 56px;">
+    <div class="wrap">
+      <div style="text-align:center; margin-bottom:52px;">
+        <span class="eyebrow">More from Dogmom Hustler</span>
+        <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,3vw,2.2rem); font-weight:700; color:var(--text); margin-top:10px; line-height:1.25;">More Digital Products</h2>
+        <p style="color:var(--muted); max-width:540px; margin:14px auto 0; font-size:0.94rem; line-height:1.8;">Standalone guides and courses to level up your digital business — at your own pace.</p>
+      </div>
+      <div class="grid-2">
+
+        <div class="bonus-card fade-up" style="text-align:left; display:flex; flex-direction:column; gap:0;">
+          <span style="font-size:2rem; display:block; margin-bottom:14px;">🎙️</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:8px; line-height:1.3;">Pathway to Digital Products</h3>
+          <p style="font-size:0.84rem; color:var(--muted); line-height:1.75; flex:1; margin-bottom:16px;">Your ultimate ebook + audio course to master marketing and turn leads into real sales.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+            <span style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--pink);">$15 USD</span>
+            <a href="checkout-pathway.html" class="btn btn-pink" style="font-size:0.8rem; padding:10px 22px;">Get It Now →</a>
+          </div>
+        </div>
+
+        <div class="bonus-card fade-up" style="text-align:left; display:flex; flex-direction:column; gap:0;">
+          <span style="font-size:2rem; display:block; margin-bottom:14px;">📱</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:8px; line-height:1.3;">Instagram Growth Guide</h3>
+          <p style="font-size:0.84rem; color:var(--muted); line-height:1.75; flex:1; margin-bottom:16px;">A 100-page audio course to optimize your Instagram, grow your audience, and start making sales.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+            <span style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--pink);">$12 USD</span>
+            <a href="checkout-instagram.html" class="btn btn-pink" style="font-size:0.8rem; padding:10px 22px;">Get It Now →</a>
+          </div>
+        </div>
+
+        <div class="bonus-card fade-up" style="text-align:left; display:flex; flex-direction:column; gap:0;">
+          <span style="font-size:2rem; display:block; margin-bottom:14px;">🎬</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:8px; line-height:1.3;">Faceless Marketing Guide + 600 Reels Vault</h3>
+          <p style="font-size:0.84rem; color:var(--muted); line-height:1.75; flex:1; margin-bottom:16px;">Learn to sell on social media without ever showing your face, plus 600 ready-to-use faceless reels.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+            <span style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--pink);">$10 USD</span>
+            <a href="checkout-faceless.html" class="btn btn-pink" style="font-size:0.8rem; padding:10px 22px;">Get It Now →</a>
+          </div>
+        </div>
+
+        <div class="bonus-card fade-up" style="text-align:left; display:flex; flex-direction:column; gap:0;">
+          <span style="font-size:2rem; display:block; margin-bottom:14px;">🧵</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:8px; line-height:1.3;">Threads Unleashed + Becoming a Super Seller</h3>
+          <p style="font-size:0.84rem; color:var(--muted); line-height:1.75; flex:1; margin-bottom:16px;">Master Threads and learn proven strategies to convert your audience into paying customers.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+            <span style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--pink);">$17 USD</span>
+            <a href="checkout-threads.html" class="btn btn-pink" style="font-size:0.8rem; padding:10px 22px;">Get It Now →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Paws &amp; Breathe</span>
+    <div style="margin-bottom:14px;">
+      <a href="mailto:dogmomhustler@gmail.com">dogmomhustler@gmail.com</a>
+      <a href="https://instagram.com/dogmomhustler" target="_blank">@dogmomhustler</a>
+    </div>
+    <p style="color:rgba(255,255,255,0.35);">© 2026 Dogmom Hustler. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Scroll to top
+    const scrollBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('show', window.scrollY > 400);
+    });
+
+    // Testimonial toggle
+    function toggleTesti(btn) {
+      var body = btn.previousElementSibling;
+      var preview = body.querySelector('.testi-preview');
+      var full = body.querySelector('.testi-full');
+      var isExpanded = !full.hidden;
+      full.hidden = isExpanded;
+      preview.hidden = !isExpanded;
+      btn.textContent = isExpanded ? 'See more' : 'See less';
+    }
+
+    // Countdown
+    (function () {
+      const el = document.getElementById('countdown');
+      function pad(n) { return String(n).padStart(2, '0'); }
+      function tick() {
+        const now = new Date();
+        const midnight = new Date(now);
+        midnight.setHours(24, 0, 0, 0);
+        const diff = midnight - now;
+        if (diff <= 0) { el.textContent = 'Offer has ended.'; return; }
+        const h = Math.floor(diff / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        el.textContent = pad(h) + 'h ' + pad(m) + 'm ' + pad(s) + 's remaining';
+        setTimeout(tick, 1000);
+      }
+      tick();
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const form    = document.getElementById('freebie-form');
+      const btn     = document.getElementById('freebie-btn');
+      const success = document.getElementById('freebie-success');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name  = document.getElementById('freebie-name').value.trim();
+        const email = document.getElementById('freebie-email').value.trim();
+        if (!name || !email) return;
+
+        btn.disabled    = true;
+        btn.textContent = 'Just a sec…';
+
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({
+            'form-name': 'potential-clients',
+            'name':  name,
+            'email': email,
+          }).toString(),
+        })
+        .finally(function () {
+          form.style.display    = 'none';
+          success.style.display = 'block';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

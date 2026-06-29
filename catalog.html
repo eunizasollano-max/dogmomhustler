@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — Dogmom Hustler</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #FFFAF8;
+      --bg-alt:     #FFF1ED;
+      --bg-card:    #FFFFFF;
+      --pink:       #C8707A;
+      --pink-soft:  #E8A8AE;
+      --pink-pale:  #FAE8EA;
+      --border:     #EDD5D7;
+      --text:       #2D1A1A;
+      --muted:      #8A6860;
+      --radius:     12px;
+      --paw-hollow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath transform='translate(16,21) rotate(0) scale(1.4)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(7,14) rotate(-15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(12,11) rotate(-5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(20,11) rotate(5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(25,14) rotate(15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3C/svg%3E") 16 16;
+      --paw-filled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath transform='translate(16,21) rotate(0) scale(1.4)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(7,14) rotate(-15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(12,11) rotate(-5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(20,11) rotate(5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(25,14) rotate(15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3C/svg%3E") 16 16;
+    }
+
+    *, *::before, *::after { cursor: var(--paw-hollow), auto; }
+    a, button, label, [onclick], [role="button"] { cursor: var(--paw-hollow), pointer; }
+    *:active { cursor: var(--paw-filled), auto !important; }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.75; }
+
+    @keyframes aurora { from { background-position: 50% 50%, 50% 50%; } to { background-position: 350% 50%, 350% 50%; } }
+    .aurora-bg { position: fixed; inset: -10px; z-index: -1; pointer-events: none; background-image: repeating-linear-gradient(100deg, #fff 0%, #fff 7%, transparent 10%, transparent 12%, #fff 16%), repeating-linear-gradient(100deg, #C8707A 10%, #a78bfa 15%, #E8A8AE 20%, #c4b5fd 25%, #f9a8d4 30%); background-size: 300%, 200%; filter: blur(10px) invert(1); opacity: 0.5; animation: aurora 60s linear infinite; mask-image: radial-gradient(ellipse at 80% 0%, black 10%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at 80% 0%, black 10%, transparent 70%); }
+    .aurora-bg::after { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(100deg, #fff 0%, #fff 7%, transparent 10%, transparent 12%, #fff 16%), repeating-linear-gradient(100deg, #C8707A 10%, #a78bfa 15%, #E8A8AE 20%, #c4b5fd 25%, #f9a8d4 30%); background-size: 200%, 100%; background-attachment: fixed; mix-blend-mode: difference; animation: aurora 60s linear infinite; }
+
+    nav { background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 16px 48px; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--text); text-decoration: none; }
+    .nav-back { font-size: 0.82rem; font-weight: 600; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.15s; }
+    .nav-back:hover { color: var(--pink); }
+    @media (max-width: 640px) { nav { padding: 14px 20px; } }
+
+    .page-header { background: var(--pink); padding: 56px 48px 52px; text-align: center; }
+    .eyebrow-label { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 10px; }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 12px; }
+    .page-header p { color: rgba(255,255,255,0.82); font-size: 0.96rem; max-width: 480px; margin: 0 auto; line-height: 1.75; }
+    @media (max-width: 640px) { .page-header { padding: 44px 20px 40px; } }
+
+    .wrap { max-width: 1060px; margin: 0 auto; }
+    .section { padding: 80px 48px; }
+    @media (max-width: 640px) { .section { padding: 56px 20px; } }
+
+    .section-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 10px; }
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; color: var(--text); line-height: 1.25; }
+    .section-header p { color: var(--muted); max-width: 480px; margin: 12px auto 0; font-size: 0.92rem; line-height: 1.8; }
+
+    .prod-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    @media (max-width: 720px) { .prod-grid { grid-template-columns: 1fr; } }
+
+    .prod-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px 28px; display: flex; flex-direction: column; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+    .prod-card:hover { border-color: var(--pink-soft); box-shadow: 0 6px 28px rgba(200,112,122,0.12); transform: translateY(-4px); }
+    .prod-card .card-icon { font-size: 2.2rem; display: block; margin-bottom: 16px; }
+    .prod-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 10px; line-height: 1.3; }
+    .prod-card .card-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.8; flex: 1; margin-bottom: 22px; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .price-tag { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--pink); }
+    .price-free { background: var(--pink-pale); color: var(--pink); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.1em; padding: 5px 14px; border-radius: 100px; border: 1px solid var(--pink-soft); }
+
+    .btn { display: inline-block; text-align: center; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.84rem; letter-spacing: 0.05em; border-radius: 100px; padding: 11px 24px; border: none; transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease, background 0.15s; }
+    .btn:hover { transform: translateY(-3px) scale(1.02); }
+    .btn:active { transform: translateY(1px) scale(0.98); transition-duration: 0.07s; }
+    .btn-pink { background: var(--pink); color: #fff; box-shadow: 0 2px 0 rgba(0,0,0,0.10); }
+    @keyframes pulse-glow { 0%, 100% { box-shadow: 0 2px 0 rgba(0,0,0,0.10), 0 0 0 0 rgba(200,112,122,0.5); } 50% { box-shadow: 0 2px 0 rgba(0,0,0,0.10), 0 0 0 10px rgba(200,112,122,0); } }
+    .btn-pink { animation: pulse-glow 2.4s ease-in-out infinite; }
+    .btn-pink:hover { animation: none; background: #d4788a; box-shadow: 0 8px 24px rgba(200,112,122,0.4); }
+    .btn-outline { background: transparent; color: var(--pink); border: 2px solid var(--pink); box-shadow: none; animation: none; }
+    .btn-outline:hover { background: var(--pink); color: #fff; animation: none; transform: translateY(-3px) scale(1.02); }
+
+    footer { background: var(--text); color: rgba(255,255,255,0.55); text-align: center; padding: 48px 24px; font-size: 0.8rem; line-height: 2.2; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-weight: 700; color: #fff; font-size: 1.1rem; display: block; margin-bottom: 10px; }
+    footer a { color: rgba(255,255,255,0.75); text-decoration: none; margin: 0 12px; }
+    footer a:hover { color: var(--pink-soft); }
+  </style>
+</head>
+<body>
+
+  <div class="aurora-bg" aria-hidden="true"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Paws &amp; Breathe</a>
+    <a href="index.html" class="nav-back">← Back to home</a>
+  </nav>
+
+  <div class="page-header">
+    <span class="eyebrow-label">Dogmom Hustler</span>
+    <h1>Digital Product Catalog</h1>
+    <p>Everything from Dogmom Hustler in one place — paid guides, courses, and free resources.</p>
+  </div>
+
+  <!-- FLAGSHIP PRODUCTS -->
+  <div class="section" style="background: var(--bg-alt); border-bottom: 1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-label">Signature Bundles</span>
+        <h2>Our Main Products</h2>
+        <p>The full done-for-you bundles — everything you need to start and grow your digital business.</p>
+      </div>
+      <div class="prod-grid">
+
+        <div class="prod-card" style="border-color: var(--pink); position: relative;">
+          <span style="position:absolute; top:-12px; left:24px; background:var(--pink); color:#fff; font-size:0.68rem; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; padding:5px 14px; border-radius:100px;">⭐ Best Seller</span>
+          <span class="card-icon">🎬</span>
+          <h3>Ultimate Branding Course (UBC)</h3>
+          <p class="card-desc">270+ videos, 22+ hours, 25 modules covering social media, branding, and the sales process — with Master Resell Rights so you can resell for 100% profit.</p>
+          <div class="card-footer">
+            <span class="price-tag">$499 USD</span>
+            <a href="ubcmain.html" class="btn btn-pink">Know More →</a>
+          </div>
+        </div>
+
+        <div class="prod-card" style="border-color: var(--pink-soft); position: relative;">
+          <span class="card-icon">🐾</span>
+          <h3>Paws &amp; Breathe: Dogmom's Guide to Slow Living</h3>
+          <p class="card-desc">The complete done-for-you digital product bundle — 2,000+ courses, 2,500+ Canva templates, 8TB of content, faceless reels, website templates, and PLR rights so you can resell it as your own.</p>
+          <div class="card-footer">
+            <span class="price-tag">₱2,499</span>
+            <a href="index.html" class="btn btn-pink">Know More →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- STANDALONE DIGITAL PRODUCTS -->
+  <div class="section" style="background: var(--bg);">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-label">Digital Products</span>
+        <h2>Guides, Courses &amp; Vaults</h2>
+        <p>Standalone resources to grow your digital business — one-time payment, instant access.</p>
+      </div>
+      <div class="prod-grid">
+
+        <div class="prod-card">
+          <span class="card-icon">🎙️</span>
+          <h3>Pathway to Digital Products</h3>
+          <p class="card-desc">Your ultimate ebook + audio course to master marketing and turn leads into real sales. Tips, tricks, and strategies to make you stand out — listen on the go and absorb knowledge like a sponge.</p>
+          <div class="card-footer">
+            <span class="price-tag">$15 USD</span>
+            <a href="checkout-pathway.html" class="btn btn-pink">Get It Now →</a>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <span class="card-icon">📱</span>
+          <h3>Instagram Growth Guide</h3>
+          <p class="card-desc">A 100-page audio course to optimize your business on Instagram. Perfect if you're stuck on content, struggling with sales, feeling lost, or overwhelmed by too much information.</p>
+          <div class="card-footer">
+            <span class="price-tag">$12 USD</span>
+            <a href="checkout-instagram.html" class="btn btn-pink">Get It Now →</a>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <span class="card-icon">🎬</span>
+          <h3>Faceless Marketing Guide + 600 Reels Vault</h3>
+          <p class="card-desc">Learn to sell on social media without ever showing your face — plus 600 ready-to-use faceless reels to give your content strategy an instant head start.</p>
+          <div class="card-footer">
+            <span class="price-tag">$10 USD</span>
+            <a href="checkout-faceless.html" class="btn btn-pink">Get It Now →</a>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <span class="card-icon">🧵</span>
+          <h3>Threads Unleashed + Becoming a Super Seller</h3>
+          <p class="card-desc">Unlock the power of Threads and become a super seller. Grow your audience and discover proven techniques to convert followers into paying customers.</p>
+          <div class="card-footer">
+            <span class="price-tag">$17 USD</span>
+            <a href="checkout-threads.html" class="btn btn-pink">Get It Now →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- COMING SOON -->
+  <div class="section" style="background: var(--bg-alt); border-top: 1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-label">Coming Soon ✨</span>
+        <h2>Something New is on the Way</h2>
+        <p>More digital and physical products are in the works — stay tuned!</p>
+      </div>
+      <div class="prod-grid" style="max-width:560px; margin:0 auto;">
+
+        <div class="prod-card" style="border-style: dashed; border-color: var(--pink-soft); opacity: 0.85; grid-column: 1 / -1;">
+          <span class="card-icon">📓</span>
+          <h3>Another Day, Another Chance</h3>
+          <p class="card-desc">A physical journal designed for dog moms who are building their dreams one day at a time. More details coming soon — watch this space!</p>
+          <div class="card-footer">
+            <span class="price-free" style="font-size:0.75rem; padding:6px 16px;">Coming Soon</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FREE RESOURCES -->
+  <div class="section" style="background: var(--pink-pale); border-top: 1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-label">On the House 🎁</span>
+        <h2>Free Resources</h2>
+        <p>No payment needed — just click and download. A little gift from Dogmom Hustler to get you started.</p>
+      </div>
+      <div class="prod-grid">
+
+        <div class="prod-card" style="border-color: var(--pink-soft);">
+          <span class="card-icon">📖</span>
+          <h3>Ultimate Guide for Beginners</h3>
+          <p class="card-desc">Everything a beginner needs to know to get started in digital products and online business. Grab your free guide and hit the ground running — no purchase needed.</p>
+          <div class="card-footer">
+            <span class="price-free">FREE</span>
+            <a href="https://drive.google.com/file/d/1nmZEXYhy_QXubxLUSKQnIseT4Ihox1GB/view?usp=drivesdk" target="_blank" class="btn btn-outline">📥 Download Free</a>
+          </div>
+        </div>
+
+        <div class="prod-card" style="border-color: var(--pink-soft);">
+          <span class="card-icon">👀</span>
+          <h3>SNEAKPEEK UBC</h3>
+          <p class="card-desc">Get a free preview of the Ultimate Branding Course — see exactly what's inside and how it can transform your brand before you decide to join.</p>
+          <div class="card-footer">
+            <span class="price-free">FREE</span>
+            <a href="https://drive.google.com/file/d/1uxDZrse4wzW-OEXqWn135VYrZGrlHb84/view?usp=drivesdk" target="_blank" class="btn btn-outline">📥 Download Free</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Paws &amp; Breathe</span>
+    <div style="margin-bottom:14px;">
+      <a href="mailto:dogmomhustler@gmail.com">dogmomhustler@gmail.com</a>
+      <a href="https://instagram.com/dogmomhustler" target="_blank">@dogmomhustler</a>
+    </div>
+    <p style="color:rgba(255,255,255,0.35);">© 2026 Dogmom Hustler. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

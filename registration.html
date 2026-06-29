@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register for Access — Paws &amp; Breathe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #FFFAF8;
+      --bg-alt:     #FFF1ED;
+      --bg-card:    #FFFFFF;
+      --pink:       #C8707A;
+      --pink-soft:  #E8A8AE;
+      --pink-pale:  #FAE8EA;
+      --pink-light: #FFF0F1;
+      --border:     #EDD5D7;
+      --text:       #2D1A1A;
+      --muted:      #8A6860;
+      --green:      #4B9E6E;
+      --green-pale: #E8F5EE;
+      --radius:     12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ── PAW CURSOR ── */
+    :root {
+      --paw-hollow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath transform='translate(16,21) rotate(0) scale(1.4)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(7,14) rotate(-15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(12,11) rotate(-5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(20,11) rotate(5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(25,14) rotate(15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3C/svg%3E") 16 16;
+      --paw-filled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath transform='translate(16,21) rotate(0) scale(1.4)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(7,14) rotate(-15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(12,11) rotate(-5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(20,11) rotate(5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(25,14) rotate(15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3C/svg%3E") 16 16;
+    }
+    *, *::before, *::after { cursor: var(--paw-hollow), auto; }
+    a, button, label, summary, [onclick], [role="button"] { cursor: var(--paw-hollow), pointer; }
+    *:active { cursor: var(--paw-filled), auto !important; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* ── AURORA BACKGROUND ── */
+    @keyframes aurora {
+      from { background-position: 50% 50%, 50% 50%; }
+      to   { background-position: 350% 50%, 350% 50%; }
+    }
+    .aurora-bg {
+      position: fixed;
+      inset: -10px;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(100deg,
+          #fff 0%, #fff 7%,
+          transparent 10%, transparent 12%,
+          #fff 16%),
+        repeating-linear-gradient(100deg,
+          #C8707A 10%, #a78bfa 15%,
+          #E8A8AE 20%, #c4b5fd 25%,
+          #f9a8d4 30%);
+      background-size: 300%, 200%;
+      background-position: 50% 50%, 50% 50%;
+      filter: blur(10px) invert(1);
+      opacity: 0.5;
+      animation: aurora 60s linear infinite;
+      will-change: background-position;
+      mask-image: radial-gradient(ellipse at 80% 0%, black 10%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at 80% 0%, black 10%, transparent 70%);
+    }
+    .aurora-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(100deg,
+          #fff 0%, #fff 7%,
+          transparent 10%, transparent 12%,
+          #fff 16%),
+        repeating-linear-gradient(100deg,
+          #C8707A 10%, #a78bfa 15%,
+          #E8A8AE 20%, #c4b5fd 25%,
+          #f9a8d4 30%);
+      background-size: 200%, 100%;
+      background-attachment: fixed;
+      mix-blend-mode: difference;
+      animation: aurora 60s linear infinite;
+    }
+
+    /* BANNER */
+    .banner {
+      background: var(--pink);
+      color: #fff;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-back {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s;
+    }
+    .nav-back:hover { color: var(--pink); }
+    @media (max-width: 640px) { nav { padding: 14px 20px; } }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--pink);
+      padding: 44px 48px 40px;
+      text-align: center;
+    }
+    .page-header .eyebrow {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 10px;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .page-header p {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.92rem;
+    }
+    .price-badge-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 100px;
+      padding: 8px 24px;
+      margin-top: 18px;
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.88rem;
+    }
+    .price-badge-header s { color: rgba(255,255,255,0.55); font-weight: 400; }
+
+    /* MAIN GRID */
+    .checkout-wrap {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 56px 40px;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 36px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .checkout-wrap { grid-template-columns: 1fr; padding: 36px 20px; }
+    }
+
+    /* SECTION CARD */
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .section-card:last-child { margin-bottom: 0; }
+    .card-header {
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .card-header .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .card-body { padding: 28px; }
+
+    /* FORM FIELDS */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      outline: none;
+    }
+    .form-group input:focus {
+      border-color: var(--pink-soft);
+      box-shadow: 0 0 0 3px rgba(200,112,122,0.1);
+    }
+    .form-group input::placeholder { color: var(--muted); font-size: 0.88rem; }
+
+    /* PAYMENT METHOD TABS */
+    .pay-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .pay-tab {
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 14px;
+      cursor: pointer;
+      text-align: center;
+      background: var(--bg);
+      transition: border-color 0.15s, background 0.15s;
+      position: relative;
+    }
+    .pay-tab input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+    .pay-tab .tab-icon { font-size: 1.4rem; display: block; margin-bottom: 6px; }
+    .pay-tab .tab-label { font-size: 0.8rem; font-weight: 700; color: var(--text); display: block; }
+    .pay-tab .tab-sub { font-size: 0.7rem; color: var(--muted); display: block; margin-top: 2px; }
+    .pay-tab.selected {
+      border-color: var(--pink);
+      background: var(--pink-pale);
+    }
+    .pay-tab.selected .tab-label { color: var(--pink); }
+    .pay-tab .check-mark {
+      position: absolute;
+      top: 8px; right: 8px;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: #fff;
+      font-size: 0.62rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+    .pay-tab.selected .check-mark { opacity: 1; }
+
+    /* PAYMENT PANELS */
+    .pay-panel { display: none; }
+    .pay-panel.active { display: block; }
+
+    .info-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--pink-soft);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .info-box strong { color: var(--text); }
+    .info-box a { color: var(--pink); font-weight: 600; }
+
+    /* CARD ICONS */
+    .card-icons { display: flex; gap: 8px; align-items: center; margin-bottom: 16px; }
+    .card-icon {
+      height: 26px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 3px 8px;
+      font-size: 0.62rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.02em;
+    }
+    .card-icon.visa { color: #1a1f71; }
+    .card-icon.mc { color: #eb001b; }
+    .card-icon.amex { color: #007bc1; }
+    .card-icon.discover { color: #e65c00; }
+
+    /* ORDER LINE */
+    .order-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .order-line:last-child { border-bottom: none; }
+    .order-line .item-name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+    .order-line .item-sub { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+    .order-line .item-price { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .order-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0 0;
+      margin-top: 4px;
+    }
+    .order-total span:first-child { font-size: 0.82rem; font-weight: 700; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+    .order-total .total-price { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--pink); }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      border-radius: 100px;
+      padding: 15px 32px;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease, background 0.15s;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.10);
+    }
+    .btn:hover { transform: translateY(-3px) scale(1.02); }
+    .btn:active { transform: translateY(1px) scale(0.98); transition-duration: 0.07s; }
+
+    .btn-pink {
+      background: var(--pink);
+      color: #fff;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.10), 0 0 0 0 rgba(200,112,122,0.4);
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 2px 0 rgba(0,0,0,0.10), 0 0 0 0 rgba(200,112,122,0.5); }
+      50%       { box-shadow: 0 2px 0 rgba(0,0,0,0.10), 0 0 0 10px rgba(200,112,122,0); }
+    }
+    .btn-pink { animation: pulse-glow 2.4s ease-in-out infinite; }
+    .btn-pink:hover { animation: none; background: #d4788a; box-shadow: 0 8px 24px rgba(200,112,122,0.4); }
+
+    .btn-green {
+      background: var(--green);
+      color: #fff;
+    }
+    .btn-green:hover { background: #3d8a5e; box-shadow: 0 8px 24px rgba(75,158,110,0.35); }
+
+    .btn-block { display: block; width: 100%; padding: 17px; font-size: 0.94rem; }
+
+    .btn-sub {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      opacity: 0.75;
+      margin-top: 4px;
+      letter-spacing: 0;
+    }
+
+    /* TRUST BADGES */
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    /* LEGAL TEXT */
+    .legal {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.8;
+    }
+    .legal a { color: var(--pink); text-decoration: none; }
+
+    /* ── RIGHT SIDEBAR ── */
+    .sidebar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      position: sticky;
+      top: 24px;
+    }
+    .sidebar-photo {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-body { padding: 24px 22px; }
+
+    .sidebar-eyebrow {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--pink);
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .benefit-list { list-style: none; margin-bottom: 20px; }
+    .benefit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 7px 0;
+      font-size: 0.82rem;
+      color: var(--text);
+      border-bottom: 1px dashed var(--border);
+      line-height: 1.55;
+    }
+    .benefit-list li:last-child { border-bottom: none; }
+    .benefit-list li .ico { color: var(--pink); flex-shrink: 0; margin-top: 1px; font-size: 0.82rem; }
+
+    .bonus-section { margin-top: 16px; }
+    .bonus-header {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--pink);
+      display: block;
+      margin-bottom: 12px;
+    }
+    .bonus-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 0.8rem;
+      color: var(--text);
+      border-bottom: 1px dashed var(--border);
+    }
+    .bonus-item:last-child { border-bottom: none; }
+    .bonus-item .bonus-label { font-weight: 600; }
+    .bonus-item .bonus-val { font-size: 0.7rem; color: var(--muted); }
+
+    .sidebar-footer {
+      background: var(--pink);
+      padding: 16px 22px;
+      text-align: center;
+    }
+    .sidebar-footer p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.78rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .sidebar-footer strong { color: #fff; font-size: 0.92rem; }
+
+    /* ── GCASH SECTION ── */
+    .gcash-section {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 60px 40px;
+    }
+    .gcash-wrap {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (max-width: 720px) {
+      .gcash-wrap { grid-template-columns: 1fr; gap: 32px; }
+      .gcash-section { padding: 40px 20px; }
+    }
+
+    .gcash-text-side .eyebrow {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--pink);
+      display: block;
+      margin-bottom: 12px;
+    }
+    .gcash-text-side h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .gcash-text-side h2 em { color: var(--pink); font-style: normal; }
+    .gcash-text-side p { color: var(--muted); font-size: 0.9rem; line-height: 1.85; margin-bottom: 16px; }
+
+    .gcash-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .gcash-contact a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--pink);
+      text-decoration: none;
+    }
+    .gcash-contact a:hover { text-decoration: underline; }
+
+    .gcash-qr-side { text-align: center; }
+
+    .scan-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--pink);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .qr-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 24px 24px;
+      max-width: 300px;
+      margin: 0 auto;
+      box-shadow: 0 8px 32px rgba(200,112,122,0.1);
+    }
+    .gcash-logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .gcash-logo-badge {
+      background: #0d6efd;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.06em;
+    }
+    .gcash-logo-badge span { opacity: 0.75; }
+    .qr-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: 2px;
+      letter-spacing: 0.04em;
+    }
+    .qr-account {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .qr-image {
+      width: 100%;
+      max-width: 200px;
+      display: block;
+      margin: 0 auto 16px;
+      border-radius: 8px;
+    }
+    .qr-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .qr-steps {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .qr-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+      min-width: 60px;
+    }
+    .qr-step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--pink-pale);
+      border: 2px solid var(--pink-soft);
+      color: var(--pink);
+      font-size: 0.72rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr-step p {
+      font-size: 0.62rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .gcash-contact-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
+      font-size: 0.72rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    .gcash-contact-row span { display: flex; align-items: center; gap: 5px; }
+
+    /* ── TESTIMONIALS ── */
+    .testi-section {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      padding: 72px 40px;
+    }
+    .testi-wrap { max-width: 1060px; margin: 0 auto; }
+    .testi-header { margin-bottom: 44px; text-align: center; }
+    .testi-header .eyebrow {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--pink);
+      display: block;
+      margin-bottom: 10px;
+    }
+    .testi-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 760px) { .testi-grid { grid-template-columns: 1fr; } }
+
+    .testi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      position: relative;
+    }
+    .testi-card::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--pink-soft);
+      line-height: 1;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .testi-card p {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .testi-card .testi-author {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--pink);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .testi-img-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .testi-img-card img {
+      width: 100%;
+      display: block;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 52px 24px;
+      font-size: 0.8rem;
+      line-height: 2.2;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #fff;
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+    footer a { color: rgba(255,255,255,0.75); text-decoration: none; margin: 0 12px; }
+    footer a:hover { color: var(--pink-soft); }
+
+    /* ── MOBILE ADJUSTMENTS ── */
+    @media (max-width: 640px) {
+      .form-row { grid-template-columns: 1fr; }
+      .pay-tabs { grid-template-columns: 1fr 1fr; }
+      .checkout-wrap { padding: 28px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AURORA BACKGROUND -->
+  <div class="aurora-bg" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Paws &amp; Breathe</a>
+    <a href="index.html" class="nav-back">← Back to sales page</a>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <span class="eyebrow">Instant Access</span>
+    <h1>Register for Access</h1>
+    <p>Paws &amp; Breathe: Dogmom's Guide to Slow Living</p>
+  </div>
+
+  <!-- MAIN CHECKOUT AREA -->
+  <div class="gcash-section" style="padding-top: 0; padding-bottom: 0; background: var(--bg-alt); border-top: none;">
+    <div class="checkout-wrap">
+
+      <!-- LEFT: PAYMENT FORM -->
+      <div>
+
+        <!-- 1. Contact Info -->
+        <div class="section-card">
+          <div class="card-header">
+            <div class="step-num">1</div>
+            <h2>Your Information</h2>
+          </div>
+          <div class="card-body">
+            <div class="form-row">
+              <div class="form-group" style="margin-bottom:0;">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" placeholder="First Name" />
+              </div>
+              <div class="form-group" style="margin-bottom:0;">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" placeholder="Last Name" />
+              </div>
+            </div>
+            <div class="form-group" style="margin-top:14px; margin-bottom:0;">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="you@example.com" />
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Get Access -->
+        <div class="section-card">
+          <div class="card-header">
+            <div class="step-num">2</div>
+            <h2>Get Your Instant Access</h2>
+          </div>
+          <div class="card-body">
+            <div class="info-box">
+              <strong>You're one step away!</strong><br/>
+              Fill in your name and email above, then click the button below to access your purchase instantly.
+            </div>
+
+            <a href="javascript:void(0)" onclick="getAccess()" class="btn btn-pink btn-block" style="text-align:center; font-size:0.96rem;">
+              🐾 Access My Purchase Now
+              <span class="btn-sub">You'll be redirected to your access page</span>
+            </a>
+
+            <div class="trust-row">
+              <span class="trust-badge">🔒 SSL Secured</span>
+              <span class="trust-badge">⚡ Instant Access</span>
+              <span class="trust-badge">♾️ Lifetime Access</span>
+              <span class="trust-badge">📋 PLR Included</span>
+            </div>
+            <p class="legal">
+              By registering, you agree to our
+              <a href="https://dogmomhustler.systeme.io/checkoutsnoot" target="_blank">Terms &amp; Conditions</a>.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: PRODUCT SIDEBAR -->
+      <div>
+        <div class="sidebar-card">
+          <img src="images/hero.png" alt="Yuni and Kuma" class="sidebar-photo" />
+          <div class="sidebar-body">
+            <span class="sidebar-eyebrow">Here's what you'll get:</span>
+            <ul class="benefit-list">
+              <li><span class="ico">🎀</span> Done-for-You Digital Product Blueprint</li>
+              <li><span class="ico">🎀</span> Faceless Instagram Marketing Guide</li>
+              <li><span class="ico">🎀</span> 2,000+ courses, trainings, masterclass, ebooks &amp; reels</li>
+              <li><span class="ico">🎀</span> 8 Terabytes of video &amp; audio content</li>
+              <li><span class="ico">🎀</span> 2,500+ Editable Canva Templates</li>
+              <li><span class="ico">🎀</span> 600+ Aesthetic Faceless Reels</li>
+              <li><span class="ico">🎀</span> Built-In Website Template (Canva)</li>
+              <li><span class="ico">🎀</span> Built-In Website Template (Systeme.io)</li>
+              <li><span class="ico">🎀</span> Facebook Ads Guide</li>
+              <li><span class="ico">🎀</span> Kumayuniversity Course (Weekly Video Course)</li>
+              <li><span class="ico">🎀</span> Pathway to Profit (Audio Course)</li>
+              <li><span class="ico">🎀</span> Guide to Instagram Growth (Audio Course)</li>
+            </ul>
+            <div class="bonus-section">
+              <span class="bonus-header">You'll ALSO get — Free Bonuses:</span>
+              <div class="bonus-item">
+                <span class="ico" style="color:var(--pink); font-size:0.82rem; margin-top:2px;">🎁</span>
+                <div>
+                  <div class="bonus-label">Lifetime Support &amp; Guidance from me</div>
+                  <div class="bonus-val">Priceless Value</div>
+                </div>
+              </div>
+              <div class="bonus-item">
+                <span class="ico" style="color:var(--pink); font-size:0.82rem; margin-top:2px;">🎁</span>
+                <div>
+                  <div class="bonus-label">Lifetime Access to a Private Community</div>
+                  <div class="bonus-val">Priceless Value</div>
+                </div>
+              </div>
+              <div class="bonus-item">
+                <span class="ico" style="color:var(--pink); font-size:0.82rem; margin-top:2px;">🎁</span>
+                <div>
+                  <div class="bonus-label">Access to Updates from Kit for free</div>
+                  <div class="bonus-val">Always up-to-date</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-footer">
+            <p><strong>Total Value: ₱41,200</strong><br/>Your price today: only ₱2,499</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="testi-section">
+    <div class="testi-wrap">
+      <div class="testi-header">
+        <span class="eyebrow">⭐⭐⭐⭐⭐ Student Reviews</span>
+        <h2>What Students Are Saying</h2>
+      </div>
+      <div class="testi-grid">
+
+        <div class="testi-card">
+          <p>Hi Yuni! Can I just say na napaka swerti ko to be mentored by YOU? NAKU APAKABAIT! You're always checking up on us, super approachable, and you made sure everyone feels welcomed, respected and valued. Please stay humble, Yuni. 😘</p>
+          <p class="testi-author">— Happy Student</p>
+        </div>
+
+        <div class="testi-card">
+          <p>Waaah ako deeen Yuni I wanna say thank you supeerr hulog ka ng langit ✨ super supportive and helpful mo talaga. Muntik ko na di ituloy pero pag nagmemessage ka nagkakaenergy akong tapusin. For sure malayo mararating mong bata ka prettyyy pa!</p>
+          <p class="testi-author">— Grateful Student</p>
+        </div>
+
+        <div class="testi-card">
+          <p>Thank you for your support, Coach Yuni. 😊 You have been generous with all your resources and learnings. You go above and beyond and make sure to help me reach what you have achieved already. Appreciate you for continuously guiding me even after sales!</p>
+          <p class="testi-author">— Satisfied Student</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Paws &amp; Breathe</span>
+    <div style="margin-bottom:14px;">
+      <a href="mailto:dogmomhustler@gmail.com">dogmomhustler@gmail.com</a>
+      <a href="https://instagram.com/dogmomhustler" target="_blank">@dogmomhustler</a>
+    </div>
+    <p style="color:rgba(255,255,255,0.35);">© 2026 Dogmom Hustler. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function getAccess() {
+      var fname = document.getElementById('fname').value.trim();
+      var email = document.getElementById('email').value.trim();
+      if (!fname) { alert('Please enter your first name.'); return; }
+      if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+      window.location.href = 'https://dogmomhustler.systeme.io/accessthesnoot';
+    }
+  </script>
+
+</body>
+</html>

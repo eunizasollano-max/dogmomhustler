@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complete Your Order — Ultimate Branding Course</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://www.paypal.com/sdk/js?client-id=AR2LKMzynpl2QrnW3lzl5LOiAS5-FGtPkyGioy1X-FAYR5x5ZnT9qnxeqgk36v_ySDvaFBONn4a8hk8y&currency=USD" defer></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #FFFAF8;
+      --bg-alt:     #FFF1ED;
+      --bg-card:    #FFFFFF;
+      --pink:       #A85060;
+      --pink-soft:  #C4889A;
+      --pink-pale:  #EFD8DE;
+      --pink-light: #F9F0F2;
+      --border:     #DFC8CE;
+      --text:       #2D1A1A;
+      --muted:      #8A6860;
+      --radius:     12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* PAW CURSOR */
+    :root {
+      --paw-hollow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath transform='translate(16,21) rotate(0) scale(1.4)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(7,14) rotate(-15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(12,11) rotate(-5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(20,11) rotate(5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(25,14) rotate(15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='3.2' stroke-linejoin='round'/%3E%3C/svg%3E") 16 16;
+      --paw-filled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath transform='translate(16,21) rotate(0) scale(1.4)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3Cpath transform='translate(7,14) rotate(-15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3Cpath transform='translate(12,11) rotate(-5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3Cpath transform='translate(20,11) rotate(5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3Cpath transform='translate(25,14) rotate(15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3C/svg%3E") 16 16;
+    }
+    *, *::before, *::after { cursor: var(--paw-hollow), auto; }
+    a, button, label, summary, [onclick], [role="button"] { cursor: var(--paw-hollow), pointer; }
+    *:active { cursor: var(--paw-filled), auto !important; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* AURORA BACKGROUND */
+    @keyframes aurora {
+      from { background-position: 50% 50%, 50% 50%; }
+      to   { background-position: 350% 50%, 350% 50%; }
+    }
+    .aurora-bg {
+      position: fixed;
+      inset: -10px;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(100deg,
+          #fff 0%, #fff 7%,
+          transparent 10%, transparent 12%,
+          #fff 16%),
+        repeating-linear-gradient(100deg,
+          #A85060 10%, #a78bfa 15%,
+          #C4889A 20%, #c4b5fd 25%,
+          #f9a8d4 30%);
+      background-size: 300%, 200%;
+      background-position: 50% 50%, 50% 50%;
+      filter: blur(10px) invert(1);
+      opacity: 0.5;
+      animation: aurora 60s linear infinite;
+      will-change: background-position;
+      mask-image: radial-gradient(ellipse at 80% 0%, black 10%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at 80% 0%, black 10%, transparent 70%);
+    }
+    .aurora-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(100deg,
+          #fff 0%, #fff 7%,
+          transparent 10%, transparent 12%,
+          #fff 16%),
+        repeating-linear-gradient(100deg,
+          #A85060 10%, #a78bfa 15%,
+          #C4889A 20%, #c4b5fd 25%,
+          #f9a8d4 30%);
+      background-size: 200%, 100%;
+      background-attachment: fixed;
+      mix-blend-mode: difference;
+      animation: aurora 60s linear infinite;
+    }
+
+
+    /* NAV */
+    nav {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-back {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s;
+    }
+    .nav-back:hover { color: var(--pink); }
+    @media (max-width: 640px) { nav { padding: 14px 20px; } }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--pink);
+      padding: 44px 48px 40px;
+      text-align: center;
+    }
+    .page-header .eyebrow {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 10px;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .page-header p {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.92rem;
+    }
+    .price-badge-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 100px;
+      padding: 8px 24px;
+      margin-top: 18px;
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.88rem;
+    }
+
+    /* MAIN GRID */
+    .checkout-wrap {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 56px 40px;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 36px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .checkout-wrap { grid-template-columns: 1fr; padding: 36px 20px; }
+    }
+
+    /* SECTION CARD */
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .section-card:last-child { margin-bottom: 0; }
+    .card-header {
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .card-header .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .card-body { padding: 28px; }
+
+    /* FORM FIELDS */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      outline: none;
+    }
+    .form-group input:focus {
+      border-color: var(--pink-soft);
+      box-shadow: 0 0 0 3px rgba(168,80,96,0.1);
+    }
+    .form-group input::placeholder { color: var(--muted); font-size: 0.88rem; }
+
+    .info-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--pink-soft);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .info-box strong { color: var(--text); }
+    .info-box a { color: var(--pink); font-weight: 600; }
+
+    /* CARD ICONS */
+    .card-icons { display: flex; gap: 8px; align-items: center; margin-bottom: 16px; }
+    .card-icon {
+      height: 26px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 3px 8px;
+      font-size: 0.62rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.02em;
+    }
+    .card-icon.visa { color: #1a1f71; }
+    .card-icon.mc { color: #eb001b; }
+    .card-icon.amex { color: #007bc1; }
+    .card-icon.discover { color: #e65c00; }
+
+    /* ORDER LINE */
+    .order-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .order-line:last-child { border-bottom: none; }
+    .order-line .item-name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+    .order-line .item-sub { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+    .order-line .item-price { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .order-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0 0;
+      margin-top: 4px;
+    }
+    .order-total span:first-child { font-size: 0.82rem; font-weight: 700; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+    .order-total .total-price { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--pink); }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      border-radius: 100px;
+      padding: 15px 32px;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease, background 0.15s;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.10);
+    }
+    .btn:hover { transform: translateY(-3px) scale(1.02); }
+    .btn:active { transform: translateY(1px) scale(0.98); transition-duration: 0.07s; }
+
+    .btn-pink {
+      background: var(--pink);
+      color: #fff;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.10), 0 0 0 0 rgba(168,80,96,0.4);
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 2px 0 rgba(0,0,0,0.10), 0 0 0 0 rgba(168,80,96,0.5); }
+      50%       { box-shadow: 0 2px 0 rgba(0,0,0,0.10), 0 0 0 10px rgba(168,80,96,0); }
+    }
+    .btn-pink { animation: pulse-glow 2.4s ease-in-out infinite; }
+    .btn-pink:hover { animation: none; background: #8E3A4A; box-shadow: 0 8px 24px rgba(168,80,96,0.4); }
+
+    .btn-outline-pink {
+      background: transparent;
+      color: var(--pink);
+      border: 2px solid var(--pink);
+      box-shadow: none;
+    }
+    .btn-outline-pink:hover {
+      animation: none;
+      background: var(--pink-pale);
+      box-shadow: 0 4px 16px rgba(168,80,96,0.15);
+    }
+
+    .btn-block { display: block; width: 100%; padding: 17px; font-size: 0.94rem; }
+
+    .btn-sub {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      opacity: 0.75;
+      margin-top: 4px;
+      letter-spacing: 0;
+    }
+
+    /* TRUST BADGES */
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    /* LEGAL TEXT */
+    .legal {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.8;
+    }
+    .legal a { color: var(--pink); text-decoration: none; }
+
+    /* PAYMENT PLAN DIVIDER */
+    .plan-divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 18px 0;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .plan-divider::before,
+    .plan-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* RIGHT SIDEBAR */
+    .sidebar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      position: sticky;
+      top: 24px;
+    }
+    .sidebar-header {
+      background: var(--pink);
+      padding: 20px 22px 18px;
+      text-align: center;
+    }
+    .sidebar-header img {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      object-fit: contain;
+      background: rgba(255,255,255,0.15);
+      display: block;
+      margin: 0 auto 10px;
+    }
+    .sidebar-header-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+    }
+    .sidebar-header-sub {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.75);
+      margin-top: 4px;
+    }
+    .sidebar-body { padding: 24px 22px; }
+
+    .sidebar-eyebrow {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--pink);
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .benefit-list { list-style: none; margin-bottom: 20px; }
+    .benefit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 7px 0;
+      font-size: 0.82rem;
+      color: var(--text);
+      border-bottom: 1px dashed var(--border);
+      line-height: 1.55;
+    }
+    .benefit-list li:last-child { border-bottom: none; }
+    .benefit-list li .ico { color: var(--pink); flex-shrink: 0; margin-top: 1px; font-size: 0.82rem; }
+
+    .sidebar-footer {
+      background: var(--pink);
+      padding: 16px 22px;
+      text-align: center;
+    }
+    .sidebar-footer p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.78rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .sidebar-footer strong { color: #fff; font-size: 0.92rem; }
+
+    /* TESTIMONIALS */
+    .testi-section {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      padding: 72px 40px;
+    }
+    .testi-wrap { max-width: 1060px; margin: 0 auto; }
+    .testi-header { margin-bottom: 44px; text-align: center; }
+    .testi-header .eyebrow {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--pink);
+      display: block;
+      margin-bottom: 10px;
+    }
+    .testi-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 760px) { .testi-grid { grid-template-columns: 1fr; } }
+
+    .testi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      position: relative;
+    }
+    .testi-card::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--pink-soft);
+      line-height: 1;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .testi-card p {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .testi-card .testi-author {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--pink);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 52px 24px;
+      font-size: 0.8rem;
+      line-height: 2.2;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #fff;
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+    footer a { color: rgba(255,255,255,0.75); text-decoration: none; margin: 0 12px; }
+    footer a:hover { color: var(--pink-soft); }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      .form-row { grid-template-columns: 1fr; }
+      .checkout-wrap { padding: 28px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AURORA BACKGROUND -->
+  <div class="aurora-bg" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="ubcmain.html" class="nav-logo">Dogmom Hustler</a>
+    <a href="ubcmain.html" class="nav-back">← Back to sales page</a>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <img src="images/ubc-logo.png" alt="UBC Logo" style="width:80px; height:auto; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.2); display:block; margin:0 auto 18px;" />
+    <span class="eyebrow">Secure Checkout</span>
+    <h1>Complete Your Order</h1>
+    <p>The ULTIMATE BRANDING COURSE with Master Resell Rights</p>
+    <div class="price-badge-header">
+      <span>One-time $499 only</span>
+    </div>
+  </div>
+
+  <!-- MAIN CHECKOUT AREA -->
+  <div style="background: var(--bg-alt); border-top: none;">
+    <div class="checkout-wrap">
+
+      <!-- LEFT: PAYMENT FORM -->
+      <div>
+
+        <!-- Step 1: Contact Info -->
+        <div class="section-card">
+          <div class="card-header">
+            <div class="step-num">1</div>
+            <h2>Your Information</h2>
+          </div>
+          <div class="card-body">
+            <div class="form-row">
+              <div class="form-group" style="margin-bottom:0;">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" placeholder="First Name" />
+              </div>
+              <div class="form-group" style="margin-bottom:0;">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" placeholder="Last Name" />
+              </div>
+            </div>
+            <div class="form-group" style="margin-top:14px; margin-bottom:0;">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="you@example.com" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Payment -->
+        <div class="section-card">
+          <div class="card-header">
+            <div class="step-num">2</div>
+            <h2>Complete Your Purchase</h2>
+          </div>
+          <div class="card-body">
+            <div class="info-box">
+              <strong>How payment works:</strong><br/>
+              You'll be redirected to our secure Stripe checkout. Enter your card details and complete payment. Keep the tab open until the transaction completes. <strong>Save the link you receive</strong> after payment — it's your access link.
+            </div>
+            <div class="card-icons">
+              <div class="card-icon visa">VISA</div>
+              <div class="card-icon mc">MC</div>
+              <div class="card-icon amex">AMEX</div>
+              <div class="card-icon discover">DISC</div>
+            </div>
+
+            <!-- ORDER SUMMARY -->
+            <div style="background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 20px;">
+              <div class="order-line">
+                <div>
+                  <div class="item-name">The ULTIMATE BRANDING COURSE</div>
+                  <div class="item-sub">Lifetime access · MRR included · 270+ videos</div>
+                </div>
+                <div class="item-price">$499</div>
+              </div>
+              <div class="order-total">
+                <span>Total Due</span>
+                <span class="total-price">$499</span>
+              </div>
+            </div>
+
+            <a href="https://buy.stripe.com/00wdRa1xqfuigef59Les003" target="_blank" class="btn btn-pink btn-block" style="text-align:center; font-size:0.96rem;">
+              🐾 Complete My Purchase — $499
+              <span class="btn-sub">You'll be redirected to our secure Stripe checkout</span>
+            </a>
+
+            <div class="trust-row">
+              <span class="trust-badge">🔒 SSL Secured</span>
+              <span class="trust-badge">⚡ Instant Access</span>
+              <span class="trust-badge">♾️ Lifetime Access</span>
+              <span class="trust-badge">🔄 MRR Included</span>
+            </div>
+
+            <div class="plan-divider">or pay with PayPal</div>
+            <div id="paypal-button-container-ubc" style="margin-bottom:16px;"></div>
+
+            <div class="plan-divider">or pay in installments</div>
+
+            <a href="3monthubc.html" class="btn btn-outline-pink btn-block" style="text-align:center; font-size:0.88rem;">
+              🐾 3 Month Payment Plan
+              <span class="btn-sub">Pay in 3 easy monthly installments — $167/month</span>
+            </a>
+
+            <p class="legal" style="margin-top:16px;">
+              By placing an order, you agree to our
+              <a href="https://buy.stripe.com/00wdRa1xqfuigef59Les003" target="_blank">Terms &amp; Conditions</a>.
+              Due to immediate digital delivery, no refunds are offered.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: PRODUCT SIDEBAR -->
+      <div>
+        <div class="sidebar-card">
+          <div class="sidebar-header">
+            <img src="images/ubc-logo.png" alt="UBC Logo" onerror="this.style.display='none'" />
+            <div class="sidebar-header-title">The ULTIMATE BRANDING COURSE</div>
+            <div class="sidebar-header-sub">with Master Resell Rights</div>
+          </div>
+          <div class="sidebar-body">
+            <span class="sidebar-eyebrow">What's included:</span>
+            <ul class="benefit-list">
+              <li><span class="ico">🎀</span> Over 270+ course videos &amp; resources</li>
+              <li><span class="ico">🎀</span> Lifetime community access</li>
+              <li><span class="ico">🎀</span> Learn how to grow a powerful brand &amp; increase your online sales</li>
+              <li><span class="ico">🎀</span> Sold with Master Resell Rights</li>
+              <li><span class="ico">🎀</span> Earn 100% of the resell profits!</li>
+              <li><span class="ico">🎀</span> 4 Languages: English, Spanish, French &amp; German</li>
+              <li><span class="ico">🎀</span> Done-for-you sales funnel templates</li>
+              <li><span class="ico">🎀</span> Weekly community calls on mindset &amp; business</li>
+              <li><span class="ico">🎀</span> Lifetime updates — new content added regularly</li>
+            </ul>
+          </div>
+          <div class="sidebar-footer">
+            <p><strong>Total Value: $2,000+</strong><br/>Your price today: only $499</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="testi-section">
+    <div class="testi-wrap">
+      <div class="testi-header">
+        <span class="eyebrow">⭐⭐⭐⭐⭐ Student Reviews</span>
+        <h2>What UBC Students Are Saying</h2>
+      </div>
+      <div class="testi-grid">
+
+        <div class="testi-card">
+          <p>The videos are AMAZING like everything is so clear and well-explained. You explain everything so well ok. How you do it and it doesn't feel overwhelming at ALL.</p>
+          <p class="testi-author">— UBC Student ♥</p>
+        </div>
+
+        <div class="testi-card">
+          <p>I've taken so many online courses and UBC is honestly the most complete one I've ever bought. The branding modules alone were worth it — I finally understand how to make my content look and feel consistent. And the MRR is just the cherry on top!</p>
+          <p class="testi-author">— Happy UBC Student ♥</p>
+        </div>
+
+        <div class="testi-card">
+          <p>I was scared to start because I didn't know anything about marketing. But UBC broke everything down step by step. I made back my investment within my first week of reselling! If you're on the fence — just go for it.</p>
+          <p class="testi-author">— Grateful UBC Student ♥</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Dogmom Hustler</span>
+    <div style="margin-bottom:14px;">
+      <a href="mailto:dogmomhustler@gmail.com">dogmomhustler@gmail.com</a>
+      <a href="https://instagram.com/dogmomhustler" target="_blank">@dogmomhustler</a>
+    </div>
+    <p style="color:rgba(255,255,255,0.35);">© 2026 Dogmom Hustler. All rights reserved.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('load', function () {
+      if (typeof paypal === 'undefined') return;
+      paypal.Buttons({
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+              description: 'The Ultimate Branding Course — MRR Included',
+              amount: { value: '499.00', currency_code: 'USD' }
+            }]
+          });
+        },
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(details) {
+            window.location.href = 'ubcaccess.html';
+          });
+        },
+        onError: function(err) {
+          alert('Something went wrong with your PayPal payment. Please try again or contact dogmomhustler@gmail.com.');
+        },
+        style: { layout: 'vertical', color: 'gold', shape: 'pill', label: 'pay' }
+      }).render('#paypal-button-container-ubc');
+    });
+  </script>
+
+
+</body>
+</html>

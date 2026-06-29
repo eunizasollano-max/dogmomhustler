@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3 Month Payment Plan — Ultimate Branding Course</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #FFFAF8;
+      --bg-alt:     #FFF1ED;
+      --bg-card:    #FFFFFF;
+      --pink:       #A85060;
+      --pink-soft:  #C4889A;
+      --pink-pale:  #EFD8DE;
+      --pink-light: #F9F0F2;
+      --border:     #DFC8CE;
+      --text:       #2D1A1A;
+      --muted:      #8A6860;
+      --radius:     12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --paw-hollow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath transform='translate(16,21) rotate(0) scale(1.4)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(7,14) rotate(-15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(12,11) rotate(-5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(20,11) rotate(5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(25,14) rotate(15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23A85060' stroke-width='3.2' stroke-linejoin='round'/%3E%3C/svg%3E") 16 16;
+      --paw-filled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath transform='translate(16,21) rotate(0) scale(1.4)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3Cpath transform='translate(7,14) rotate(-15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3Cpath transform='translate(12,11) rotate(-5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3Cpath transform='translate(20,11) rotate(5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3Cpath transform='translate(25,14) rotate(15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23A85060'/%3E%3C/svg%3E") 16 16;
+    }
+    *, *::before, *::after { cursor: var(--paw-hollow), auto; }
+    a, button, label, [onclick], [role="button"] { cursor: var(--paw-hollow), pointer; }
+    *:active { cursor: var(--paw-filled), auto !important; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* NAV */
+    nav {
+      background: rgba(255,250,248,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav-back { font-size: 0.82rem; font-weight: 700; color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    .nav-back:hover { color: var(--pink); }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text); position: absolute; left: 50%; transform: translateX(-50%); }
+    @media (max-width: 640px) { nav { padding: 14px 20px; } .nav-logo { display: none; } }
+
+    /* HERO HEADER */
+    .page-header {
+      background: var(--pink);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .page-header img {
+      width: 80px;
+      height: auto;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .page-header .subtitle {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      margin-bottom: 24px;
+    }
+    .features-list {
+      list-style: none;
+      display: inline-block;
+      text-align: left;
+      margin: 0 auto;
+    }
+    .features-list li {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.92);
+      font-weight: 600;
+      padding: 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .features-list li::before { content: '🎀'; font-size: 0.9rem; }
+
+    /* PRICE BANNER */
+    .price-banner {
+      background: var(--pink-pale);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .price-banner .label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .price-banner .price-line {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      color: var(--pink);
+    }
+    .price-banner .price-line span { color: var(--text); font-size: 1rem; font-family: 'Nunito', sans-serif; font-weight: 600; }
+
+    /* MAIN CONTENT */
+    .main-wrap {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+    }
+
+    /* IMPORTANT NOTICE */
+    .notice-box {
+      background: #FFF8E7;
+      border: 1px solid #F0D070;
+      border-left: 4px solid #E8A800;
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      margin-bottom: 28px;
+      font-size: 0.84rem;
+      color: #5A4500;
+      line-height: 1.7;
+    }
+    .notice-box strong { color: #3A2800; }
+
+    /* ORDER SUMMARY */
+    .order-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .order-card-header {
+      background: var(--pink-pale);
+      padding: 12px 18px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--pink);
+    }
+    .order-card-body { padding: 18px; }
+    .order-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .order-row:last-child { border-bottom: none; }
+    .order-row .label { color: var(--muted); }
+    .order-row .value { font-weight: 700; color: var(--text); }
+    .order-row.total .label { font-weight: 700; color: var(--text); font-size: 0.92rem; }
+    .order-row.total .value { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--pink); }
+
+    /* BUTTONS */
+    .btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.94rem;
+      letter-spacing: 0.05em;
+      border-radius: 100px;
+      padding: 16px 24px;
+      border: none;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease, background 0.15s;
+      margin-bottom: 12px;
+    }
+    .btn:hover { transform: translateY(-3px) scale(1.02); }
+    .btn:active { transform: translateY(1px) scale(0.98); transition-duration: 0.07s; }
+
+    .btn-pink {
+      background: var(--pink);
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(168,80,96,0.35);
+    }
+    @keyframes pulse-btn {
+      0%, 100% { box-shadow: 0 4px 18px rgba(168,80,96,0.35); }
+      50%       { box-shadow: 0 4px 28px rgba(168,80,96,0.6); }
+    }
+    .btn-pink { animation: pulse-btn 2.4s ease-in-out infinite; }
+    .btn-pink:hover { animation: none; background: #8E3A4A; box-shadow: 0 6px 28px rgba(168,80,96,0.5); }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--pink);
+      color: var(--pink);
+    }
+    .btn-outline:hover { background: var(--pink); color: #fff; }
+
+    .btn-sub {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      opacity: 0.85;
+      margin-top: 3px;
+      letter-spacing: 0.02em;
+    }
+
+    /* DIVIDER */
+    .or-divider {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 16px 0;
+      position: relative;
+    }
+    .or-divider::before, .or-divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 42%;
+      height: 1px;
+      background: var(--border);
+    }
+    .or-divider::before { left: 0; }
+    .or-divider::after { right: 0; }
+
+    /* TRUST */
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0 16px;
+    }
+    .trust-badge {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .legal {
+      font-size: 0.74rem;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.7;
+      margin-top: 12px;
+    }
+    .legal a { color: var(--pink); text-decoration: underline; }
+
+    /* FOOTER */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 0.8rem;
+      line-height: 2.2;
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-weight: 700; color: #fff; font-size: 1rem; display: block; margin-bottom: 8px; }
+    footer a { color: rgba(255,255,255,0.75); text-decoration: none; margin: 0 10px; }
+    footer a:hover { color: var(--pink-soft); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="checkoutubc.html" class="nav-back">← Back to UBC Checkout</a>
+    <span class="nav-logo">Dogmom Hustler</span>
+    <span></span>
+  </nav>
+
+  <!-- HERO HEADER -->
+  <div class="page-header">
+    <img src="images/ubc-logo.png" alt="UBC Logo" onerror="this.style.display='none'" />
+    <h1>The Ultimate<br/>Branding Course</h1>
+    <p class="subtitle">with Master Resell Rights</p>
+    <ul class="features-list">
+      <li>Over 270+ course videos &amp; resources</li>
+      <li>Lifetime community access</li>
+      <li>Learn how to grow a powerful brand &amp; increase your online sales</li>
+      <li>Sold with Master Resell Rights</li>
+      <li>Earn 100% of the resell profits!</li>
+      <li>4 Languages: English, Spanish, French &amp; German</li>
+    </ul>
+  </div>
+
+  <!-- PRICE BANNER -->
+  <div class="price-banner">
+    <span class="label">3 Month Payment Plan</span>
+    <div class="price-line">3 payments of <strong>$167</strong> <span>/ month</span></div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main-wrap">
+
+    <!-- IMPORTANT NOTICE -->
+    <div class="notice-box">
+      <strong>⚠️ IMPORTANT!</strong> Please note that if you are on a payment plan, you do <strong>not</strong> have access to any downloadable files or the rights to sell the product until you have made your <strong>final payment</strong>. You still have full access to the course content.
+    </div>
+
+    <!-- ORDER SUMMARY -->
+    <div class="order-card">
+      <div class="order-card-header">Order Summary</div>
+      <div class="order-card-body">
+        <div class="order-row">
+          <span class="label">The Ultimate Branding Course</span>
+          <span class="value">$167 × 3</span>
+        </div>
+        <div class="order-row">
+          <span class="label">Due today</span>
+          <span class="value">$167.00</span>
+        </div>
+        <div class="order-row total">
+          <span class="label">Total after all payments</span>
+          <span class="value">$501.00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STRIPE BUTTON -->
+    <a href="https://buy.stripe.com/28E28sfog4PE4vx59Les002" target="_blank" class="btn btn-pink">
+      🐾 Pay $167 Now — Start Plan
+      <span class="btn-sub">Secure payment via Stripe · You'll be charged $167/month for 3 months</span>
+    </a>
+
+    <div class="trust-row">
+      <span class="trust-badge">🔒 SSL Secured</span>
+      <span class="trust-badge">📚 Instant Course Access</span>
+      <span class="trust-badge">🔄 MRR After Final Payment</span>
+    </div>
+
+    <p class="legal">
+      By placing an order you agree to our Terms &amp; Conditions. Missed payments result in immediate removal from the community &amp; course. Resell rights are granted only after your final payment is received. No refunds on digital products.
+    </p>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Dogmom Hustler</span>
+    <div style="margin-bottom:10px;">
+      <a href="mailto:dogmomhustler@gmail.com">dogmomhustler@gmail.com</a>
+      <a href="https://instagram.com/dogmomhustler" target="_blank">@dogmomhustler</a>
+    </div>
+    <p>© 2026 Dogmom Hustler. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

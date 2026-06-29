@@ -1,0 +1,25 @@
+POTENTIAL CLIENTS — UBC Freebie Opt-ins
+========================================
+
+Every time someone fills out the "Grab Our Free Sneak Peek" form on ubcmain.html,
+their name and email are saved automatically by Netlify.
+
+HOW TO VIEW YOUR LEADS
+-----------------------
+1. Go to https://app.netlify.com
+2. Log in and open your site
+3. Click the "Forms" tab in the top menu
+4. Select the form named "potential-clients"
+5. You'll see every name + email that was submitted
+
+HOW TO EXPORT AS A SPREADSHEET
+--------------------------------
+On the Forms page, click "Download CSV" (top right).
+Open the file in Excel or Google Sheets — done!
+
+NOTES
+------
+- Submissions appear in real time (no delay)
+- Netlify free plan stores up to 100 submissions/month
+- The download link shown to visitors:
+  https://drive.google.com/file/d/1uxDZrse4wzW-OEXqWn135VYrZGrlHb84/view?usp=drivesdk

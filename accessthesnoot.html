@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Access Your Purchase — Paws &amp; Breathe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #FFFAF8;
+      --bg-alt:     #FFF1ED;
+      --bg-card:    #FFFFFF;
+      --pink:       #C8707A;
+      --pink-soft:  #E8A8AE;
+      --pink-pale:  #FAE8EA;
+      --pink-light: #FFF0F1;
+      --border:     #EDD5D7;
+      --text:       #2D1A1A;
+      --muted:      #8A6860;
+      --radius:     12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* PAW CURSOR */
+    :root {
+      --paw-hollow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath transform='translate(16,21) rotate(0) scale(1.4)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(7,14) rotate(-15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(12,11) rotate(-5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(20,11) rotate(5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3Cpath transform='translate(25,14) rotate(15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='none' stroke='%23C8707A' stroke-width='3.2' stroke-linejoin='round'/%3E%3C/svg%3E") 16 16;
+      --paw-filled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath transform='translate(16,21) rotate(0) scale(1.4)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(7,14) rotate(-15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(12,11) rotate(-5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(20,11) rotate(5) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3Cpath transform='translate(25,14) rotate(15) scale(0.56)' d='M 0 5 C -4 2 -5 -1 -5 -2 C -5 -4 -3 -5 -1.5 -5 C -0.5 -5 0 -4 0 -3 C 0 -4 0.5 -5 1.5 -5 C 3 -5 5 -4 5 -2 C 5 -1 4 2 0 5 Z' fill='%23C8707A'/%3E%3C/svg%3E") 16 16;
+    }
+    *, *::before, *::after { cursor: var(--paw-hollow), auto; }
+    a, button, [onclick], [role="button"] { cursor: var(--paw-hollow), pointer; }
+    *:active { cursor: var(--paw-filled), auto !important; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* AURORA BACKGROUND */
+    @keyframes aurora {
+      from { background-position: 50% 50%, 50% 50%; }
+      to   { background-position: 350% 50%, 350% 50%; }
+    }
+    .aurora-bg {
+      position: fixed;
+      inset: -10px;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(100deg,
+          #fff 0%, #fff 7%,
+          transparent 10%, transparent 12%,
+          #fff 16%),
+        repeating-linear-gradient(100deg,
+          #C8707A 10%, #a78bfa 15%,
+          #E8A8AE 20%, #c4b5fd 25%,
+          #f9a8d4 30%);
+      background-size: 300%, 200%;
+      background-position: 50% 50%, 50% 50%;
+      filter: blur(10px) invert(1);
+      opacity: 0.35;
+      animation: aurora 60s linear infinite;
+      will-change: background-position;
+      mask-image: radial-gradient(ellipse at 80% 0%, black 10%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at 80% 0%, black 10%, transparent 70%);
+    }
+
+    /* NAV */
+    nav {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-email {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-email:hover { color: var(--pink); }
+    @media (max-width: 640px) { nav { padding: 14px 20px; } }
+
+    /* THANK-YOU HEADER */
+    .thankyou-header {
+      background: var(--pink);
+      padding: 52px 48px 48px;
+      text-align: center;
+    }
+    .thankyou-header .eyebrow {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 14px;
+    }
+    .thankyou-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+    }
+    .thankyou-header h1 em {
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+    }
+    @media (max-width: 640px) { .thankyou-header { padding: 36px 24px; } }
+
+    /* INTRO SECTION */
+    .intro-section {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 52px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    @media (max-width: 760px) {
+      .intro-section { grid-template-columns: 1fr; padding: 32px 20px; gap: 32px; }
+    }
+
+    .intro-left img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      display: block;
+      margin-bottom: 20px;
+    }
+    .intro-left p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+    .intro-left a { color: var(--pink); font-weight: 700; text-decoration: none; }
+    .intro-left a:hover { text-decoration: underline; }
+
+    .bookmark-box {
+      background: var(--pink-pale);
+      border: 1.5px solid var(--pink-soft);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--pink);
+      text-align: center;
+      letter-spacing: 0.03em;
+      line-height: 1.6;
+    }
+
+    .intro-right ol {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    .intro-right ol li {
+      font-size: 0.88rem;
+      color: var(--text);
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+    .intro-right ol li a { color: var(--pink); font-weight: 600; text-decoration: none; }
+    .intro-right ol li a:hover { text-decoration: underline; }
+
+    .welcome-video-label {
+      display: inline-block;
+      background: var(--pink);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 100px;
+      margin-top: 8px;
+    }
+
+    /* VIDEO SECTION */
+    .video-section {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 40px;
+      text-align: center;
+    }
+    .video-section .eyebrow {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--pink);
+      display: block;
+      margin-bottom: 10px;
+    }
+    .video-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 28px;
+    }
+    .video-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 32px rgba(200,112,122,0.12);
+      aspect-ratio: 16/9;
+      background: var(--bg-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .video-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding: 40px;
+    }
+    .video-placeholder span { font-size: 3rem; }
+    @media (max-width: 640px) { .video-section { padding: 36px 20px; } }
+
+    /* WHERE TO START */
+    .start-section {
+      background: linear-gradient(160deg, #f9c5c9 0%, #fde5d8 35%, #d9edf7 100%);
+      padding: 72px 40px;
+      text-align: center;
+    }
+    .start-section .eyebrow {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--pink);
+      display: block;
+      margin-bottom: 12px;
+    }
+    .start-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 40px;
+    }
+    .resource-list {
+      max-width: 580px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .resource-btn {
+      display: block;
+      width: 100%;
+      padding: 14px 28px;
+      background: var(--pink);
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 100px;
+      transition: background 0.15s, transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.15s;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(200,112,122,0.18);
+    }
+    .resource-btn:hover {
+      background: #b8606a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(200,112,122,0.3);
+    }
+    .resource-btn .btn-sub {
+      display: block;
+      font-size: 0.64rem;
+      font-weight: 500;
+      opacity: 0.82;
+      margin-top: 3px;
+      letter-spacing: 0.03em;
+      text-transform: none;
+    }
+    @media (max-width: 640px) { .start-section { padding: 48px 20px; } }
+
+    /* NOTICE SECTION */
+    .notice-section {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 64px 40px;
+    }
+    .notice-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.9;
+    }
+    .notice-wrap p { margin-bottom: 16px; }
+    .notice-wrap a { color: var(--pink); font-weight: 600; text-decoration: none; }
+    .notice-wrap a:hover { text-decoration: underline; }
+
+    .notice-highlight {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+      text-align: center;
+      margin: 24px 0 8px;
+    }
+
+    .notice-box {
+      background: var(--pink-pale);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--pink);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin: 20px 0;
+    }
+    .notice-box .notice-title {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--pink);
+      display: block;
+      margin-bottom: 12px;
+    }
+    .notice-box p { margin-bottom: 10px; font-size: 0.88rem; }
+    .notice-box p:last-child { margin-bottom: 0; }
+
+    .trust-final {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--pink);
+      text-align: center;
+      margin-top: 28px;
+    }
+    @media (max-width: 640px) { .notice-section { padding: 44px 20px; } }
+
+    /* FOOTER */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 52px 24px;
+      font-size: 0.8rem;
+      line-height: 2.2;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #fff;
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+    footer a { color: rgba(255,255,255,0.75); text-decoration: none; margin: 0 12px; }
+    footer a:hover { color: var(--pink-soft); }
+  </style>
+</head>
+<body>
+
+  <div class="aurora-bg" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Paws &amp; Breathe</a>
+    <a href="mailto:dogmomhustler@gmail.com" class="nav-email">dogmomhustler@gmail.com</a>
+  </nav>
+
+  <!-- THANK-YOU HEADER -->
+  <div class="thankyou-header">
+    <span class="eyebrow">🐾 Welcome, Dogmom!</span>
+    <h1><em>Thank you</em> for purchasing<br/>Paws &amp; Breathe: Dogmom's Guide to Slow Living</h1>
+  </div>
+
+  <!-- INTRO SECTION -->
+  <div class="intro-section">
+
+    <div class="intro-left">
+      <img src="images/hero.png" alt="Paws &amp; Breathe" />
+      <p>To ensure you get future updates, please add my email address <a href="mailto:dogmomhustler@gmail.com">dogmomhustler@gmail.com</a> to your contacts.</p>
+      <div class="bookmark-box">
+        IMPORTANT: PLEASE BOOKMARK THIS LINK<br/>OR SAVE IT IN YOUR NOTES
+      </div>
+    </div>
+
+    <div class="intro-right">
+      <ol>
+        <li>Click the boxes below and <strong>make a copy</strong> of all the Canva templates. It would be best if you shared it as a template so anyone purchasing from you can make a copy. Follow the instructions <a href="https://www.canva.com/help/share-template-link/" target="_blank">here</a>.</li>
+        <li>Edit all the other details using systeme.io. <strong>Personalize the templates</strong> and other tools according to your branding. Choose a branding that <strong>highlights your personality and niche</strong>. You CANNOT copy my branding.</li>
+        <li>Set up a <strong>simple website</strong> using <a href="https://systeme.io/?sa=sa0180526262ce1ecaf4e9eb36507c15a3e48eae71" target="_blank">systeme.io</a>, Stan store, or any of your preferred platforms. I personally use systeme.io because it has amazing features and automations. You can start here.</li>
+        <li>Create your <strong>content daily and start selling</strong>. Access the BEST KEYWORD RESOURCE to post social media content. Content Cove is the most trending content bank as of today, click here to look at their aesthetic stocks.</li>
+        <li><strong>Resell at your own price</strong> but it should be from 2,000 PHP up.</li>
+      </ol>
+      <span class="welcome-video-label">CHECK OUT OUR WELCOME VIDEO FOR YOU! ↓</span>
+    </div>
+
+  </div>
+
+  <!-- WELCOME VIDEO -->
+  <div class="video-section">
+    <span class="eyebrow">Welcome to</span>
+    <h2>Kumayuniversity 🐾</h2>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/UM70lP2cp7c" title="Welcome to Kumayuniversity" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+    </div>
+  </div>
+
+  <!-- WHERE DO I START -->
+  <div class="start-section">
+    <span class="eyebrow">Your Resources</span>
+    <h2>Where do I Start?</h2>
+    <div class="resource-list">
+
+      <a href="https://www.canva.com/design/DAGIF_YHSfY/h5AFoQfl3LM1VVrvmHX1wg/view?utm_content=DAGIF_YHSfY&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="resource-btn">
+        ACCESS DFY DIGITAL PRODUCT BLUEPRINT
+        <span class="btn-sub">Step 1</span>
+      </a>
+
+      <a href="https://www.canva.com/design/DAGISWJRF_I/Mq-ga0SZr1C8ETKeA0tq3w/view?utm_content=DAGISWJRF_I&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="resource-btn">
+        THE PATHWAY TO DIGITAL PROFITS
+        <span class="btn-sub">Audio Guide Mini Course</span>
+      </a>
+
+      <a href="https://www.canva.com/design/DAGGbMhkalY/p_CVs0PhuOU4HkdAaPjrRQ/view?utm_content=DAGGbMhkalY&utm_campaign=designshare&utm_medium=editor" target="_blank" class="resource-btn">
+        ACCESS THE FREE WEBSITE TEMPLATE HERE
+        <span class="btn-sub">Step 2</span>
+      </a>
+
+      <a href="https://www.canva.com/design/DAGHWjpEKuI/_TyJqlAQVAMe2efMJTDJIw/view?utm_content=DAGHWjpEKuI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="resource-btn">
+        THE INSTAGRAM GROWTH GUIDE
+        <span class="btn-sub">Audio Guide</span>
+      </a>
+
+      <a href="https://www.canva.com/design/DAGG4XuIZlg/JPtHC1mMzBpXRhfJU-XEUQ/view?utm_content=DAGG4XuIZlg&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="resource-btn">
+        580 DIGITAL PRODUCT NICHE IDEAS
+      </a>
+
+      <a href="https://docs.google.com/document/d/1lvl_2G83cqW6pexxVBqKHsk9QHOh4_3m6IIZLfx4XpA/edit?usp=sharing" target="_blank" class="resource-btn">
+        4 STEPS SALES PITCH
+      </a>
+
+      <a href="https://docs.google.com/document/d/1tvCCdm4DbQUYoJ0c8634Q_rNRP0c_BdZpjUmMv8Id7s/edit" target="_blank" class="resource-btn">
+        FOLLOW-UP GUIDE
+      </a>
+
+      <a href="https://www.canva.com/design/DAGDbC62KWk/ksQSaSRvRFxWfkxrA-jF_g/view?utm_content=DAGDbC62KWk&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="resource-btn">
+        ACCESS THE FACELESS IG MARKETING GUIDE
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1GXBZbr_47YwNfNH2S3f0NWtx8wUq4NWA" target="_blank" class="resource-btn">
+        600+ AESTHETIC FACELESS REELS
+      </a>
+
+      <a href="https://www.canva.com/design/DAGDZM6umz8/45hIXU-PIStCCX1EmZe55g/view?utm_content=DAGDZM6umz8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="resource-btn">
+        ACCESS TO STORIES THAT SELL
+      </a>
+
+      <a href="https://www.canva.com/design/DAGDgsDnS8I/OMNEw5OdycqfrCzb3PQNTQ/view?utm_content=DAGDgsDnS8I&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="resource-btn">
+        ACCESS TO REELS THAT REACH
+      </a>
+
+      <a href="https://www.canva.com/design/DAGDgk3UX9o/yqZ95z1jPWUgtoQFd-xSXA/view?utm_content=DAGDgk3UX9o&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="resource-btn">
+        ACCESS THE FACEBOOK AD GUIDES
+      </a>
+
+      <a href="https://www.canva.com/design/DAGDm3cH0LU/XmPsD6B5mkPUNeQ4lKmJGQ/view?utm_content=DAGDm3cH0LU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="resource-btn">
+        ACCESS FIRST MONTH OF FACELESS MARKETING
+      </a>
+
+      <a href="https://d1yei2z3i6k35z.cloudfront.net/7227301/662156ea54975_500PESOSEBOOK.pdf" target="_blank" class="resource-btn">
+        GROW YOUR FACELESS ACCOUNT
+      </a>
+
+      <a href="https://mega.nz/folder/BWVRHJjJ#imGirEKsJodFfjq8hx5Ijw" target="_blank" class="resource-btn">
+        ACCESS THE MASTER LIBRARY
+      </a>
+
+      <a href="https://d1yei2z3i6k35z.cloudfront.net/7651078/6746ff19502b7_3000PagesCanvaTemplatesPlanners.pdf" target="_blank" class="resource-btn">
+        ACCESS TO 2500+ CANVA TEMPLATES
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1eZJ3hJW_FWeTIVitLO_KINPREpDldS8a" target="_blank" class="resource-btn">
+        EDUCATIONAL BUNDLE (NO NEED TO EDIT)
+      </a>
+
+      <a href="https://www.canva.com/design/DAGEoRhra2A/LJtHaTUXo_wU9zLc_tebyQ/view?utm_content=DAGEoRhra2A&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="resource-btn">
+        AFFILIATE MARKETING KIT
+      </a>
+
+      <a href="https://d1yei2z3i6k35z.cloudfront.net/7651078/67470081f2151_ZERO_INCOME_Claims.pdf" target="_blank" class="resource-btn">
+        ZERO INCOME CLAIM WITH CAPTIONS AND HOOK
+      </a>
+
+      <a href="https://t.me/+OvPz4nJjLiUwODE1" target="_blank" class="resource-btn">
+        JOIN THE COMMUNITY IN TELEGRAM
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/12XDDX4Qyctc5zpDqMxM-lHVjssVugZiy?usp=drive_link" target="_blank" class="resource-btn">
+        KUMAYUNI ZOOM RECORDINGS AND FILES
+      </a>
+
+      <a href="https://d1yei2z3i6k35z.cloudfront.net/7651078/6658519f74a2f_DogmomHustlerCanvaTemplatespart1.pdf" target="_blank" class="resource-btn">
+        CANVA TEMPLATES FROM MASTER LIBRARY 1
+      </a>
+
+      <a href="https://d1yei2z3i6k35z.cloudfront.net/7651078/665853030e04a_DogmomHustlerCanvaTemplatespart2.pdf" target="_blank" class="resource-btn">
+        CANVA TEMPLATES FROM MASTER LIBRARY 2
+      </a>
+
+      <a href="https://www.canva.com/design/DAGG4UXRHtE/kpOmrLmvdTq5Fo-JiPl97Q/view?utm_content=DAGG4UXRHtE&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="resource-btn">
+        CANVA PRODUCT MOCK UP TEMPLATE
+      </a>
+
+      <a href="https://docs.google.com/file/d/1Z0o8zdchVV187_dAZgMs-6pD5LavENpV/edit?usp=docslist_api&filetype=msword" target="_blank" class="resource-btn">
+        100 DONE FOR YOU CAPTIONS
+      </a>
+
+      <a href="https://www.canva.com/design/DAGHbcBwa-c/QXSSXTrP-5_a25RkeTbpOg/view?utm_content=DAGHbcBwa-c&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" class="resource-btn">
+        100 FACELESS REELS WITH HOOK
+      </a>
+
+    </div>
+  </div>
+
+  <!-- IMPORTANT NOTICE -->
+  <div class="notice-section">
+    <div class="notice-wrap">
+      <p>Let's say you are ready to sell now and you want to share a copy of the STARTER KIT from Canva with your customer. It would be best if you <a href="https://www.canva.com/help/share-template-link/" target="_blank">shared it as a template</a> so anyone purchasing from you can make a copy.</p>
+      <p>Just to give you an idea of how you can resell this: Let's say you decide to resell the STARTER KIT for ₱2,000 and you can make just 1 sale/day — Daily Income = ₱2,000 · Monthly Income (30 days) = ₱60,000</p>
+      <p class="notice-highlight">So just imagine how much you can earn if you have more than 1 sale/day or if you price it higher!</p>
+
+      <div class="notice-box">
+        <span class="notice-title">Important Notice to All Buyers:</span>
+        <p>I'm giving you the right to use all of my results/testimonials on my page or you can message me so you can also sell your offers. <strong>Please be mindful that you cannot claim my results as your own.</strong> Just repost it and include words like "results from other people selling digital products" and "what's possible in selling."</p>
+        <p>It's fine to start even if you don't have your results yet.</p>
+      </div>
+
+      <p>Start making content first about your offers and how they can benefit your audience, and once you are getting sales already, document everything and start sharing it.</p>
+      <p class="trust-final">Trust the process. You will get there. 🐾</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Dogmom Hustler</span>
+    <div style="margin-bottom:14px;">
+      <a href="https://www.instagram.com/dogmomhustler?igsh=eW1pYXNxaWV0YXpm&utm_source=qr" target="_blank">Instagram</a>
+      <a href="mailto:dogmomhustler@gmail.com">Email</a>
+    </div>
+    <p style="color:rgba(255,255,255,0.35);">© 2026 Dogmom Hustler. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
