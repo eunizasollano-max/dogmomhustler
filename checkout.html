@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Complete Your Order — Paws &amp; Breathe</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="https://www.paypal.com/sdk/js?client-id=AR2LKMzynpl2QrnW3lzl5LOiAS5-FGtPkyGioy1X-FAYR5x5ZnT9qnxeqgk36v_ySDvaFBONn4a8hk8y&currency=PHP" defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -263,7 +262,7 @@
     /* PAYMENT METHOD TABS */
     .pay-tabs {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 12px;
       margin-bottom: 24px;
     }
@@ -864,7 +863,7 @@
                 <input type="radio" name="paymethod" value="card" checked />
                 <div class="check-mark">✓</div>
                 <span class="tab-icon">💳</span>
-                <span class="tab-label">Card / PayPal</span>
+                <span class="tab-label">Card / Stripe</span>
                 <span class="tab-sub">Visa, Mastercard, Amex</span>
               </label>
               <label class="pay-tab" onclick="selectTab('gcash')">
@@ -873,13 +872,6 @@
                 <span class="tab-icon">📱</span>
                 <span class="tab-label">QR Code</span>
                 <span class="tab-sub">Maribank / SeaBank</span>
-              </label>
-              <label class="pay-tab" onclick="selectTab('paypal')">
-                <input type="radio" name="paymethod" value="paypal" />
-                <div class="check-mark">✓</div>
-                <span class="tab-icon">🅿️</span>
-                <span class="tab-label">PayPal</span>
-                <span class="tab-sub">Pay with PayPal</span>
               </label>
             </div>
 
@@ -965,38 +957,6 @@
                 After payment, email your receipt to
                 <a href="mailto:dogmomhustler@gmail.com">dogmomhustler@gmail.com</a>
                 or DM on Instagram. Access is granted within 24 hours.
-              </p>
-            </div>
-
-            <!-- PAYPAL PANEL -->
-            <div id="panel-paypal" class="pay-panel">
-              <div class="info-box">
-                <strong>Pay securely with PayPal:</strong><br/>
-                Click the PayPal button below. You can pay with your PayPal balance or any card linked to your account. You'll get instant access after payment completes.
-              </div>
-              <div style="background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 20px;">
-                <div class="order-line">
-                  <div>
-                    <div class="item-name">Paws &amp; Breathe: Dogmom's Guide to Slow Living</div>
-                    <div class="item-sub">Lifetime access · Instant digital delivery · PLR included</div>
-                  </div>
-                  <div class="item-price">₱2,499</div>
-                </div>
-                <div class="order-total">
-                  <span>Total Due</span>
-                  <span class="total-price">₱2,499</span>
-                </div>
-              </div>
-              <div id="paypal-button-container" style="margin-bottom:16px;"></div>
-              <div class="trust-row">
-                <span class="trust-badge">🔒 SSL Secured</span>
-                <span class="trust-badge">⚡ Instant Access</span>
-                <span class="trust-badge">♾️ Lifetime Access</span>
-                <span class="trust-badge">📋 PLR Included</span>
-              </div>
-              <p class="legal">
-                By placing an order, you agree to our Terms &amp; Conditions.
-                Due to immediate digital delivery, no refunds are offered.
               </p>
             </div>
 
@@ -1191,30 +1151,6 @@
       if (radio) { radio.checked = true; radio.closest('.pay-tab').classList.add('selected'); }
       document.getElementById('panel-' + method).classList.add('active');
     }
-
-    // PayPal buttons
-    window.addEventListener('load', function () {
-      if (typeof paypal === 'undefined') return;
-      paypal.Buttons({
-        createOrder: function(data, actions) {
-          return actions.order.create({
-            purchase_units: [{
-              description: 'Paws & Breathe: Dogmom\'s Guide to Slow Living',
-              amount: { value: '2499.00', currency_code: 'PHP' }
-            }]
-          });
-        },
-        onApprove: function(data, actions) {
-          return actions.order.capture().then(function(details) {
-            window.location.href = 'kumayunitywelcome.html';
-          });
-        },
-        onError: function(err) {
-          alert('Something went wrong with your PayPal payment. Please try again or contact dogmomhustler@gmail.com.');
-        },
-        style: { layout: 'vertical', color: 'gold', shape: 'pill', label: 'pay' }
-      }).render('#paypal-button-container');
-    });
 
     // Countdown
     (function () {

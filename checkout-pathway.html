@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Checkout — Pathway to Digital Products</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="https://www.paypal.com/sdk/js?client-id=AR2LKMzynpl2QrnW3lzl5LOiAS5-FGtPkyGioy1X-FAYR5x5ZnT9qnxeqgk36v_ySDvaFBONn4a8hk8y&currency=USD" defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -117,28 +116,10 @@
         <div class="section-card">
           <div class="card-header">
             <div class="step-num">1</div>
-            <h2>Choose Payment Method</h2>
+            <h2>Complete Your Purchase</h2>
           </div>
           <div class="card-body">
-            <div class="pay-tabs">
-              <label class="pay-tab selected" onclick="selectTab('card')">
-                <input type="radio" name="paymethod" value="card" checked />
-                <div class="check-mark">✓</div>
-                <span class="tab-icon">💳</span>
-                <span class="tab-label">Card / Stripe</span>
-                <span class="tab-sub">Visa, Mastercard, Amex</span>
-              </label>
-              <label class="pay-tab" onclick="selectTab('paypal')">
-                <input type="radio" name="paymethod" value="paypal" />
-                <div class="check-mark">✓</div>
-                <span class="tab-icon">🅿️</span>
-                <span class="tab-label">PayPal</span>
-                <span class="tab-sub">Pay with PayPal</span>
-              </label>
-            </div>
-
-            <!-- STRIPE PANEL -->
-            <div id="panel-card" class="pay-panel active">
+            <div>
               <div class="info-box">
                 <strong>How card payment works:</strong><br/>
                 You'll be redirected to our secure Stripe checkout. Complete payment and you'll receive your download link instantly.
@@ -160,34 +141,6 @@
                 🐾 Pay with Card — $15 USD
                 <span class="btn-sub">Redirects to secure Stripe checkout</span>
               </a>
-              <div class="trust-row">
-                <span class="trust-badge">🔒 SSL Secured</span>
-                <span class="trust-badge">⚡ Instant Access</span>
-                <span class="trust-badge">📥 Digital Download</span>
-              </div>
-              <p class="legal">Due to immediate digital delivery, no refunds are offered.</p>
-            </div>
-
-            <!-- PAYPAL PANEL -->
-            <div id="panel-paypal" class="pay-panel">
-              <div class="info-box">
-                <strong>Pay securely with PayPal:</strong><br/>
-                Click the PayPal button below. You'll get instant access to your download after payment completes.
-              </div>
-              <div class="order-summary">
-                <div class="order-line">
-                  <div>
-                    <div class="item-name">Pathway to Digital Products</div>
-                    <div class="item-sub">Ebook + Audio Course · Instant digital delivery</div>
-                  </div>
-                  <div class="item-price">$15</div>
-                </div>
-                <div class="order-total">
-                  <span>Total Due</span>
-                  <span class="total-price">$15 USD</span>
-                </div>
-              </div>
-              <div id="paypal-button-container" style="margin-bottom:16px;"></div>
               <div class="trust-row">
                 <span class="trust-badge">🔒 SSL Secured</span>
                 <span class="trust-badge">⚡ Instant Access</span>
@@ -233,34 +186,5 @@
     <p style="color:rgba(255,255,255,0.35);">© 2026 Dogmom Hustler. All rights reserved.</p>
   </footer>
 
-  <script>
-    function selectTab(method) {
-      document.querySelectorAll('.pay-tab').forEach(t => t.classList.remove('selected'));
-      document.querySelectorAll('.pay-panel').forEach(p => p.classList.remove('active'));
-      var radio = document.querySelector('input[value="' + method + '"]');
-      if (radio) { radio.checked = true; radio.closest('.pay-tab').classList.add('selected'); }
-      document.getElementById('panel-' + method).classList.add('active');
-    }
-
-    window.addEventListener('load', function () {
-      if (typeof paypal === 'undefined') return;
-      paypal.Buttons({
-        createOrder: function(data, actions) {
-          return actions.order.create({
-            purchase_units: [{ description: 'Pathway to Digital Products', amount: { value: '15.00', currency_code: 'USD' } }]
-          });
-        },
-        onApprove: function(data, actions) {
-          return actions.order.capture().then(function() {
-            window.location.href = 'thankyou-pathway.html';
-          });
-        },
-        onError: function(err) {
-          alert('Something went wrong with your PayPal payment. Please try again or contact dogmomhustler@gmail.com.');
-        },
-        style: { layout: 'vertical', color: 'gold', shape: 'pill', label: 'pay' }
-      }).render('#paypal-button-container');
-    });
-  </script>
 </body>
 </html>
